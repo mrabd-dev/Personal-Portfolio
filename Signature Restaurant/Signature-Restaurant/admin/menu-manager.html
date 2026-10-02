@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>Menu Manager | Signature Restaurant Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="admin-body">
+
+
+<div class="admin-layout">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="admin-sidebar"
+    >
+
+        <div class="admin-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="admin-brand"
+            >
+                Signature
+
+                <small>
+                    ADMIN PANEL
+                </small>
+            </a>
+
+
+            <button
+                type="button"
+                class="admin-sidebar-close"
+                id="admin-sidebar-close"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="admin-owner">
+
+            <div class="admin-owner-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div>
+                <span>Restaurant owner</span>
+                <strong>Signature</strong>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="orders.html">
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <a href="reservations.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span>
+                    Reservations
+                </span>
+
+            </a>
+
+
+            <a
+                href="menu-manager.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <span>
+                    Menu Manager
+                </span>
+
+            </a>
+
+
+            <a href="messages.html">
+
+                <i class="fa-solid fa-message"></i>
+
+                <span>
+                    Messages
+                </span>
+
+            </a>
+
+
+            <div class="admin-nav-divider"></div>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <a
+                href="../menu.html"
+                target="_blank"
+            >
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                <span>
+                    View customer menu
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-footer">
+
+            <a
+                href="login.html"
+                class="admin-logout-button"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Log out
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="admin-topbar">
+
+            <div class="admin-topbar-left">
+
+                <button
+                    type="button"
+                    class="admin-menu-button"
+                    id="admin-menu-button"
+                    aria-label="Open menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div>
+                    <p>Restaurant management</p>
+                    <strong>Menu Manager</strong>
+                </div>
+
+            </div>
+
+
+            <div class="admin-topbar-right">
+
+                <div class="admin-status">
+
+                    <span></span>
+
+                    Restaurant open
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             CONTENT
+        ================================== -->
+
+        <main class="admin-content">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="admin-page-heading">
+
+                <div>
+
+                    <p class="admin-eyebrow">
+                        RESTAURANT MENU
+                    </p>
+
+                    <h1>
+                        Menu Manager
+                    </h1>
+
+                    <p>
+                        Manage dishes, categories,
+                        prices and availability.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn admin-primary-button"
+                    id="add-menu-item-button"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add menu item
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================
+                 MENU STATS
+            ================================== -->
+
+            <section class="menu-admin-stats">
+
+
+                <article>
+
+                    <span>
+                        Total items
+                    </span>
+
+                    <strong id="menu-total-items">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Available
+                    </span>
+
+                    <strong id="menu-available-items">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Unavailable
+                    </span>
+
+                    <strong id="menu-unavailable-items">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Categories
+                    </span>
+
+                    <strong id="menu-category-count">
+                        0
+                    </strong>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 TOOLBAR
+            ================================== -->
+
+            <section class="menu-admin-toolbar">
+
+
+                <div class="admin-order-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="menu-search"
+                        placeholder="Search dishes..."
+                    >
+
+                </div>
+
+
+                <select id="menu-category-filter">
+
+                    <option value="All">
+                        All categories
+                    </option>
+
+                </select>
+
+
+                <select id="menu-availability-filter">
+
+                    <option value="All">
+                        All availability
+                    </option>
+
+                    <option value="Available">
+                        Available
+                    </option>
+
+                    <option value="Unavailable">
+                        Unavailable
+                    </option>
+
+                </select>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 MENU ITEMS
+            ================================== -->
+
+            <section class="menu-manager-panel">
+
+
+                <div
+                    class="menu-manager-grid"
+                    id="menu-manager-grid"
+                ></div>
+
+
+
+                <div
+                    class="admin-empty-state menu-manager-empty"
+                    id="menu-manager-empty"
+                >
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                    <h3>
+                        No menu items found
+                    </h3>
+
+                    <p>
+                        Add a dish to start
+                        building the restaurant menu.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================
+     ADD / EDIT ITEM MODAL
+====================================== -->
+
+<div
+    class="menu-item-modal"
+    id="menu-item-modal"
+>
+
+    <div class="menu-item-modal-card">
+
+
+        <!-- HEADER -->
+
+        <div class="admin-order-modal-header">
+
+            <div>
+
+                <p class="admin-eyebrow">
+                    MENU ITEM
+                </p>
+
+                <h2 id="menu-modal-title">
+                    Add new dish
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="close-menu-modal"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form id="menu-item-form">
+
+
+            <input
+                type="hidden"
+                id="menu-item-id"
+            >
+
+
+
+            <div class="form-grid">
+
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="menu-item-name">
+                        Dish name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="menu-item-name"
+                        placeholder="e.g. Chicken Fajita Pizza"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="menu-item-category">
+                        Category
+                    </label>
+
+                    <select
+                        id="menu-item-category"
+                        required
+                    >
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="Burgers">
+                            Burgers
+                        </option>
+
+                        <option value="Pizza">
+                            Pizza
+                        </option>
+
+                        <option value="BBQ">
+                            BBQ
+                        </option>
+
+                        <option value="Pasta">
+                            Pasta
+                        </option>
+
+                        <option value="Chinese">
+                            Chinese
+                        </option>
+
+                        <option value="Drinks">
+                            Drinks
+                        </option>
+
+                        <option value="Desserts">
+                            Desserts
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <!-- Price -->
+
+                <div class="form-group">
+
+                    <label for="menu-item-price">
+                        Price (Rs.)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="menu-item-price"
+                        min="0"
+                        step="1"
+                        placeholder="690"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Availability -->
+
+                <div class="form-group">
+
+                    <label for="menu-item-availability">
+                        Availability
+                    </label>
+
+                    <select
+                        id="menu-item-availability"
+                    >
+
+                        <option value="Available">
+                            Available
+                        </option>
+
+                        <option value="Unavailable">
+                            Unavailable
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Description -->
+
+            <div class="form-group">
+
+                <label for="menu-item-description">
+                    Description
+                </label>
+
+                <textarea
+                    id="menu-item-description"
+                    placeholder="Describe the dish..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- Image path -->
+
+            <div class="form-group">
+
+                <label for="menu-item-image">
+                    Image path
+                </label>
+
+                <input
+                    type="text"
+                    id="menu-item-image"
+                    placeholder="assets/images/dish.jpg"
+                >
+
+                <small class="menu-form-help">
+                    Example:
+                    assets/images/signature-burger.jpg
+                </small>
+
+            </div>
+
+
+
+            <!-- Featured -->
+
+            <label class="menu-featured-option">
+
+                <input
+                    type="checkbox"
+                    id="menu-item-featured"
+                >
+
+                <span>
+                    <strong>
+                        House favourite
+                    </strong>
+
+                    <small>
+                        Highlight this dish
+                        as a featured item.
+                    </small>
+                </span>
+
+            </label>
+
+
+
+            <div class="menu-form-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancel-menu-item"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn admin-primary-button"
+                >
+                    Save item
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     DELETE CONFIRMATION
+====================================== -->
+
+<div
+    class="menu-delete-modal"
+    id="menu-delete-modal"
+>
+
+    <div class="menu-delete-card">
+
+        <div class="menu-delete-icon">
+
+            <i class="fa-solid fa-trash"></i>
+
+        </div>
+
+
+        <h2>
+            Delete this menu item?
+        </h2>
+
+
+        <p>
+            This action will remove the dish
+            from the demo menu data.
+        </p>
+
+
+        <div class="menu-delete-actions">
+
+            <button
+                type="button"
+                class="btn btn-outline"
+                id="cancel-delete-item"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="btn menu-delete-confirm"
+                id="confirm-delete-item"
+            >
+                Delete item
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+====================================== -->
+
+<script>
+
+
+    /* =========================
+       DEFAULT MENU
+    ========================= */
+
+    const defaultMenuItems = [
+
+        {
+            id: "burger-001",
+            name: "The Signature Burger",
+            category: "Burgers",
+            price: 690,
+            description:
+                "Juicy grilled beef, melted cheddar, crisp lettuce, caramelised onions and our signature sauce.",
+            image:
+                "assets/images/signature-burger.jpg",
+            availability:
+                "Available",
+            featured:
+                true
+        },
+
+        {
+            id: "burger-002",
+            name: "Crispy Chicken Burger",
+            category: "Burgers",
+            price: 590,
+            description:
+                "Crunchy chicken fillet, lettuce, cheese, pickles and creamy house mayo.",
+            image:
+                "assets/images/crispy-chicken-burger.jpg",
+            availability:
+                "Available",
+            featured:
+                false
+        },
+
+        {
+            id: "pizza-001",
+            name: "Margherita, Our Way",
+            category: "Pizza",
+            price: 1190,
+            description:
+                "Stone-style baked crust, rich tomato sauce, mozzarella and fresh basil.",
+            image:
+                "assets/images/margherita-pizza.jpg",
+            availability:
+                "Available",
+            featured:
+                true
+        },
+
+        {
+            id: "pizza-002",
+            name: "Chicken Fajita Pizza",
+            category: "Pizza",
+            price: 1390,
+            description:
+                "Seasoned chicken, onions, bell peppers, mozzarella and fajita sauce.",
+            image:
+                "assets/images/chicken-fajita-pizza.jpg",
+            availability:
+                "Available",
+            featured:
+                false
+        },
+
+        {
+            id: "bbq-001",
+            name: "Smoky Chicken Tikka",
+            category: "BBQ",
+            price: 890,
+            description:
+                "Chargrilled chicken, aromatic spices, fresh naan and cooling mint chutney.",
+            image:
+                "assets/images/chicken-tikka.jpg",
+            availability:
+                "Available",
+            featured:
+                true
+        },
+
+        {
+            id: "bbq-002",
+            name: "Chicken Malai Boti",
+            category: "BBQ",
+            price: 980,
+            description:
+                "Tender chicken pieces marinated with cream, herbs and subtle spices.",
+            image:
+                "assets/images/chicken-malai-boti.jpg",
+            availability:
+                "Available",
+            featured:
+                false
+        },
+
+        {
+            id: "pasta-001",
+            name: "Chicken Alfredo",
+            category: "Pasta",
+            price: 890,
+            description:
+                "Pasta tossed with grilled chicken, parmesan and creamy Alfredo sauce.",
+            image:
+                "assets/images/alfredo-pasta.jpg",
+            availability:
+                "Available",
+            featured:
+                false
+        },
+
+        {
+            id: "chinese-001",
+            name: "Chicken Fried Rice",
+            category: "Chinese",
+            price: 650,
+            description:
+                "Fragrant rice, chicken, vegetables, egg and savoury seasoning.",
+            image:
+                "assets/images/chicken-fried-rice.jpg",
+            availability:
+                "Available",
+            featured:
+                false
+        },
+
+        {
+            id: "drink-001",
+            name: "Fresh Mint Lemonade",
+            category: "Drinks",
+            price: 290,
+            description:
+                "Lemon, mint, crushed ice and a refreshing fizz.",
+            image:
+                "assets/images/mint-lemonade.jpg",
+            availability:
+                "Available",
+            featured:
+                false
+        },
+
+        {
+            id: "dessert-001",
+            name: "Chocolate Lava Cake",
+            category: "Desserts",
+            price: 490,
+            description:
+                "Warm chocolate cake with a rich molten centre.",
+            image:
+                "assets/images/chocolate-lava-cake.jpg",
+            availability:
+                "Available",
+            featured:
+                false
+        }
+
+    ];
+
+
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const menuGrid =
+        document.getElementById(
+            "menu-manager-grid"
+        );
+
+    const emptyState =
+        document.getElementById(
+            "menu-manager-empty"
+        );
+
+    const searchInput =
+        document.getElementById(
+            "menu-search"
+        );
+
+    const categoryFilter =
+        document.getElementById(
+            "menu-category-filter"
+        );
+
+    const availabilityFilter =
+        document.getElementById(
+            "menu-availability-filter"
+        );
+
+    const itemModal =
+        document.getElementById(
+            "menu-item-modal"
+        );
+
+    const deleteModal =
+        document.getElementById(
+            "menu-delete-modal"
+        );
+
+    const itemForm =
+        document.getElementById(
+            "menu-item-form"
+        );
+
+    const modalTitle =
+        document.getElementById(
+            "menu-modal-title"
+        );
+
+
+    let deleteItemId = null;
+
+
+
+    /* =========================
+       GET MENU
+    ========================= */
+
+    function getMenuItems() {
+
+        const stored =
+            localStorage.getItem(
+                "signatureMenu"
+            );
+
+
+        if (!stored) {
+
+            localStorage.setItem(
+                "signatureMenu",
+                JSON.stringify(
+                    defaultMenuItems
+                )
+            );
+
+
+            return [
+                ...defaultMenuItems
+            ];
+
+        }
+
+
+        try {
+
+            return JSON.parse(
+                stored
+            ) || [];
+
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+
+
+    /* =========================
+       SAVE MENU
+    ========================= */
+
+    function saveMenuItems(items) {
+
+        localStorage.setItem(
+            "signatureMenu",
+            JSON.stringify(items)
+        );
+
+    }
+
+
+
+    /* =========================
+       ID GENERATOR
+    ========================= */
+
+    function generateMenuId() {
+
+        return (
+            "item-" +
+            Date.now()
+                .toString()
+        );
+
+    }
+
+
+
+    /* =========================
+       UPDATE STATS
+    ========================= */
+
+    function updateMenuStats() {
+
+        const items =
+            getMenuItems();
+
+
+        const available =
+            items.filter(
+                item =>
+                    item.availability ===
+                    "Available"
+            ).length;
+
+
+        const unavailable =
+            items.filter(
+                item =>
+                    item.availability ===
+                    "Unavailable"
+            ).length;
+
+
+        const categories =
+            [
+                ...new Set(
+                    items.map(
+                        item =>
+                            item.category
+                    )
+                )
+            ];
+
+
+        document.getElementById(
+            "menu-total-items"
+        ).textContent =
+            items.length;
+
+
+        document.getElementById(
+            "menu-available-items"
+        ).textContent =
+            available;
+
+
+        document.getElementById(
+            "menu-unavailable-items"
+        ).textContent =
+            unavailable;
+
+
+        document.getElementById(
+            "menu-category-count"
+        ).textContent =
+            categories.length;
+
+    }
+
+
+
+    /* =========================
+       CATEGORY FILTER
+    ========================= */
+
+    function populateCategories() {
+
+        const items =
+            getMenuItems();
+
+
+        const currentValue =
+            categoryFilter.value;
+
+
+        const categories =
+            [
+                ...new Set(
+                    items
+                        .map(
+                            item =>
+                                item.category
+                        )
+                        .filter(Boolean)
+                )
+            ].sort();
+
+
+        categoryFilter.innerHTML = `
+
+            <option value="All">
+                All categories
+            </option>
+
+        `;
+
+
+        categories.forEach(
+            category => {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value =
+                    category;
+
+
+                option.textContent =
+                    category;
+
+
+                categoryFilter
+                    .appendChild(
+                        option
+                    );
+
+            }
+        );
+
+
+        if (
+            categories.includes(
+                currentValue
+            )
+        ) {
+
+            categoryFilter.value =
+                currentValue;
+
+        }
+
+    }
+
+
+
+    /* =========================
+       RENDER MENU
+    ========================= */
+
+    function renderMenuItems() {
+
+        const items =
+            getMenuItems();
+
+
+        const searchTerm =
+            searchInput.value
+                .trim()
+                .toLowerCase();
+
+
+        const selectedCategory =
+            categoryFilter.value;
+
+
+        const selectedAvailability =
+            availabilityFilter.value;
+
+
+        const filtered =
+            items.filter(
+                item => {
+
+
+                    const searchMatch =
+                        item.name
+                            .toLowerCase()
+                            .includes(searchTerm)
+                        ||
+                        item.category
+                            .toLowerCase()
+                            .includes(searchTerm);
+
+
+                    const categoryMatch =
+                        selectedCategory ===
+                        "All"
+                        ||
+                        item.category ===
+                        selectedCategory;
+
+
+                    const availabilityMatch =
+                        selectedAvailability ===
+                        "All"
+                        ||
+                        item.availability ===
+                        selectedAvailability;
+
+
+                    return (
+                        searchMatch &&
+                        categoryMatch &&
+                        availabilityMatch
+                    );
+
+                }
+            );
+
+
+        menuGrid.innerHTML =
+            "";
+
+
+        if (
+            filtered.length === 0
+        ) {
+
+            emptyState.style.display =
+                "flex";
+
+            return;
+
+        }
+
+
+        emptyState.style.display =
+            "none";
+
+
+        filtered.forEach(
+            item => {
+
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                card.className =
+                    "menu-manager-card";
+
+
+                card.innerHTML = `
+
+                    <div class="menu-manager-image">
+
+                        ${
+                            item.image
+                            ? `
+                                <img
+                                    src="../${item.image}"
+                                    alt="${item.name}"
+                                    onerror="
+                                        this.style.display='none';
+                                        this.nextElementSibling.style.display='flex';
+                                    "
+                                >
+                            `
+                            : ""
+                        }
+
+                        <div
+                            class="menu-manager-image-placeholder"
+                            style="${
+                                item.image
+                                    ? "display:none;"
+                                    : "display:flex;"
+                            }"
+                        >
+
+                            <i class="fa-solid fa-utensils"></i>
+
+                        </div>
+
+
+                        ${
+                            item.featured
+                                ? `
+                                    <span class="menu-featured-badge">
+                                        House favourite
+                                    </span>
+                                `
+                                : ""
+                        }
+
+                    </div>
+
+
+                    <div class="menu-manager-card-body">
+
+                        <div class="menu-manager-card-top">
+
+                            <span>
+                                ${item.category}
+                            </span>
+
+                            <span
+                                class="menu-availability-badge ${
+                                    item.availability ===
+                                    "Available"
+                                        ? "available"
+                                        : "unavailable"
+                                }"
+                            >
+
+                                ${item.availability}
+
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            ${item.name}
+                        </h3>
+
+
+                        <p>
+                            ${item.description}
+                        </p>
+
+
+                        <strong class="menu-manager-price">
+                            Rs. ${Number(
+                                item.price
+                            ).toLocaleString()}
+                        </strong>
+
+
+                        <div class="menu-manager-actions">
+
+
+                            <button
+                                type="button"
+                                class="menu-manager-edit"
+                                data-id="${item.id}"
+                            >
+
+                                <i class="fa-solid fa-pen"></i>
+
+                                Edit
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="menu-manager-toggle"
+                                data-id="${item.id}"
+                            >
+
+                                <i class="fa-solid ${
+                                    item.availability ===
+                                    "Available"
+                                        ? "fa-eye-slash"
+                                        : "fa-eye"
+                                }"></i>
+
+                                ${
+                                    item.availability ===
+                                    "Available"
+                                        ? "Unavailable"
+                                        : "Available"
+                                }
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="menu-manager-delete"
+                                data-id="${item.id}"
+                            >
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                menuGrid.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+        attachCardEvents();
+
+    }
+
+
+
+    /* =========================
+       CARD EVENTS
+    ========================= */
+
+    function attachCardEvents() {
+
+
+        document
+            .querySelectorAll(
+                ".menu-manager-edit"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            openEditModal(
+                                button.dataset.id
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        document
+            .querySelectorAll(
+                ".menu-manager-toggle"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            toggleAvailability(
+                                button.dataset.id
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        document
+            .querySelectorAll(
+                ".menu-manager-delete"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            openDeleteModal(
+                                button.dataset.id
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+    }
+
+
+
+    /* =========================
+       OPEN ADD MODAL
+    ========================= */
+
+    document.getElementById(
+        "add-menu-item-button"
+    ).addEventListener(
+        "click",
+        () => {
+
+            itemForm.reset();
+
+
+            document.getElementById(
+                "menu-item-id"
+            ).value = "";
+
+
+            document.getElementById(
+                "menu-item-availability"
+            ).value =
+                "Available";
+
+
+            modalTitle.textContent =
+                "Add new dish";
+
+
+            itemModal.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+
+
+    /* =========================
+       OPEN EDIT MODAL
+    ========================= */
+
+    function openEditModal(id) {
+
+        const items =
+            getMenuItems();
+
+
+        const item =
+            items.find(
+                item =>
+                    item.id === id
+            );
+
+
+        if (!item) {
+            return;
+        }
+
+
+        document.getElementById(
+            "menu-item-id"
+        ).value =
+            item.id;
+
+
+        document.getElementById(
+            "menu-item-name"
+        ).value =
+            item.name;
+
+
+        document.getElementById(
+            "menu-item-category"
+        ).value =
+            item.category;
+
+
+        document.getElementById(
+            "menu-item-price"
+        ).value =
+            item.price;
+
+
+        document.getElementById(
+            "menu-item-availability"
+        ).value =
+            item.availability;
+
+
+        document.getElementById(
+            "menu-item-description"
+        ).value =
+            item.description;
+
+
+        document.getElementById(
+            "menu-item-image"
+        ).value =
+            item.image || "";
+
+
+        document.getElementById(
+            "menu-item-featured"
+        ).checked =
+            Boolean(
+                item.featured
+            );
+
+
+        modalTitle.textContent =
+            "Edit menu item";
+
+
+        itemModal.classList.add(
+            "show"
+        );
+
+    }
+
+
+
+    /* =========================
+       SAVE ITEM
+    ========================= */
+
+    itemForm.addEventListener(
+        "submit",
+        event => {
+
+            event.preventDefault();
+
+
+            const id =
+                document.getElementById(
+                    "menu-item-id"
+                ).value;
+
+
+            const newItem = {
+
+                id:
+                    id ||
+                    generateMenuId(),
+
+                name:
+                    document.getElementById(
+                        "menu-item-name"
+                    ).value.trim(),
+
+                category:
+                    document.getElementById(
+                        "menu-item-category"
+                    ).value,
+
+                price:
+                    Number(
+                        document.getElementById(
+                            "menu-item-price"
+                        ).value
+                    ),
+
+                availability:
+                    document.getElementById(
+                        "menu-item-availability"
+                    ).value,
+
+                description:
+                    document.getElementById(
+                        "menu-item-description"
+                    ).value.trim(),
+
+                image:
+                    document.getElementById(
+                        "menu-item-image"
+                    ).value.trim(),
+
+                featured:
+                    document.getElementById(
+                        "menu-item-featured"
+                    ).checked
+
+            };
+
+
+            const items =
+                getMenuItems();
+
+
+            const existingIndex =
+                items.findIndex(
+                    item =>
+                        item.id === id
+                );
+
+
+            if (
+                existingIndex >= 0
+            ) {
+
+                items[
+                    existingIndex
+                ] = newItem;
+
+            } else {
+
+                items.push(
+                    newItem
+                );
+
+            }
+
+
+            saveMenuItems(
+                items
+            );
+
+
+            closeItemModal();
+
+
+            populateCategories();
+
+            updateMenuStats();
+
+            renderMenuItems();
+
+        }
+    );
+
+
+
+    /* =========================
+       TOGGLE AVAILABILITY
+    ========================= */
+
+    function toggleAvailability(id) {
+
+        const items =
+            getMenuItems();
+
+
+        const item =
+            items.find(
+                item =>
+                    item.id === id
+            );
+
+
+        if (!item) {
+            return;
+        }
+
+
+        item.availability =
+            item.availability ===
+            "Available"
+                ? "Unavailable"
+                : "Available";
+
+
+        saveMenuItems(
+            items
+        );
+
+
+        updateMenuStats();
+
+        renderMenuItems();
+
+    }
+
+
+
+    /* =========================
+       DELETE ITEM
+    ========================= */
+
+    function openDeleteModal(id) {
+
+        deleteItemId =
+            id;
+
+
+        deleteModal.classList.add(
+            "show"
+        );
+
+    }
+
+
+    document.getElementById(
+        "confirm-delete-item"
+    ).addEventListener(
+        "click",
+        () => {
+
+
+            if (!deleteItemId) {
+                return;
+            }
+
+
+            const items =
+                getMenuItems()
+                    .filter(
+                        item =>
+                            item.id !==
+                            deleteItemId
+                    );
+
+
+            saveMenuItems(
+                items
+            );
+
+
+            deleteItemId =
+                null;
+
+
+            deleteModal.classList.remove(
+                "show"
+            );
+
+
+            populateCategories();
+
+            updateMenuStats();
+
+            renderMenuItems();
+
+        }
+    );
+
+
+
+    /* =========================
+       CLOSE MODALS
+    ========================= */
+
+    function closeItemModal() {
+
+        itemModal.classList.remove(
+            "show"
+        );
+
+    }
+
+
+    document.getElementById(
+        "close-menu-modal"
+    ).addEventListener(
+        "click",
+        closeItemModal
+    );
+
+
+    document.getElementById(
+        "cancel-menu-item"
+    ).addEventListener(
+        "click",
+        closeItemModal
+    );
+
+
+    itemModal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target ===
+                itemModal
+            ) {
+
+                closeItemModal();
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "cancel-delete-item"
+    ).addEventListener(
+        "click",
+        () => {
+
+            deleteItemId =
+                null;
+
+
+            deleteModal.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+
+    deleteModal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target ===
+                deleteModal
+            ) {
+
+                deleteItemId =
+                    null;
+
+
+                deleteModal.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* =========================
+       FILTERS
+    ========================= */
+
+    searchInput.addEventListener(
+        "input",
+        renderMenuItems
+    );
+
+
+    categoryFilter.addEventListener(
+        "change",
+        renderMenuItems
+    );
+
+
+    availabilityFilter.addEventListener(
+        "change",
+        renderMenuItems
+    );
+
+
+
+    /* =========================
+       MOBILE SIDEBAR
+    ========================= */
+
+    const sidebar =
+        document.getElementById(
+            "admin-sidebar"
+        );
+
+
+    const menuButton =
+        document.getElementById(
+            "admin-menu-button"
+        );
+
+
+    const sidebarClose =
+        document.getElementById(
+            "admin-sidebar-close"
+        );
+
+
+    menuButton.addEventListener(
+        "click",
+        () => {
+
+            sidebar.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+
+    sidebarClose.addEventListener(
+        "click",
+        () => {
+
+            sidebar.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+
+
+    /* =========================
+       INITIALIZE
+    ========================= */
+
+    populateCategories();
+
+    updateMenuStats();
+
+    renderMenuItems();
+
+
+</script>
+
+
+</body>
+
+</html>

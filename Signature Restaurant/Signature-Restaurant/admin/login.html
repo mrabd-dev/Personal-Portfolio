@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>Admin Login | Signature Restaurant</title>
+
+    <!-- Notice ../ because this file is inside admin folder -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="admin-login-body">
+
+
+    <!-- =====================================
+         ADMIN LOGIN PAGE
+    ====================================== -->
+
+    <main class="admin-login-page">
+
+
+        <!-- Left branding -->
+
+        <section class="admin-login-brand">
+
+            <a
+                href="../index.html"
+                class="admin-login-logo"
+            >
+
+                Signature
+
+                <small>
+                    RESTAURANT · PHALIA
+                </small>
+
+            </a>
+
+
+            <div class="admin-login-brand-content">
+
+                <p class="eyebrow">
+                    RESTAURANT MANAGEMENT
+                </p>
+
+                <h1>
+                    Everything in one place.
+                </h1>
+
+                <p>
+                    Manage orders,
+                    reservations,
+                    menu items
+                    and customer messages
+                    from your private dashboard.
+                </p>
+
+
+                <div class="admin-login-features">
+
+
+                    <div>
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <span>
+                            Manage customer orders
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        <span>
+                            Review table reservations
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-utensils"></i>
+
+                        <span>
+                            Update restaurant menu
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-message"></i>
+
+                        <span>
+                            Read customer enquiries
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <p class="admin-login-credit">
+                Signature Restaurant Management
+            </p>
+
+        </section>
+
+
+
+        <!-- Login form -->
+
+        <section class="admin-login-form-side">
+
+            <div class="admin-login-box">
+
+
+                <div class="admin-login-heading">
+
+                    <div class="admin-lock-icon">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                    </div>
+
+
+                    <p class="eyebrow">
+                        OWNER ACCESS
+                    </p>
+
+                    <h2>
+                        Welcome back.
+                    </h2>
+
+                    <p>
+                        Sign in to access
+                        the restaurant dashboard.
+                    </p>
+
+                </div>
+
+
+
+                <form
+                    id="admin-login-form"
+                    class="admin-login-form"
+                >
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="admin-email">
+                            Email address
+                        </label>
+
+
+                        <div class="admin-input-wrapper">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="admin-email"
+                                name="email"
+                                placeholder="owner@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="admin-password">
+                            Password
+                        </label>
+
+
+                        <div class="admin-input-wrapper">
+
+                            <i class="fa-solid fa-key"></i>
+
+
+                            <input
+                                type="password"
+                                id="admin-password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="toggle-password"
+                                class="toggle-password"
+                                aria-label="Show password"
+                            >
+
+                                <i
+                                    class="fa-solid fa-eye"
+                                    id="password-eye"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Remember -->
+
+                    <div class="admin-login-options">
+
+
+                        <label class="remember-admin">
+
+                            <input
+                                type="checkbox"
+                                id="remember-admin"
+                            >
+
+                            <span>
+                                Remember this device
+                            </span>
+
+                        </label>
+
+
+                        <button
+                            type="button"
+                            class="admin-forgot-password"
+                            id="forgot-password-button"
+                        >
+                            Forgot password?
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- Error -->
+
+                    <div
+                        class="admin-login-message"
+                        id="admin-login-message"
+                        role="alert"
+                    ></div>
+
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="btn admin-login-button"
+                    >
+
+                        Sign in
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div class="admin-security-note">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <p>
+                        This area is intended only for
+                        authorized restaurant management.
+                    </p>
+
+                </div>
+
+
+
+                <a
+                    href="../index.html"
+                    class="admin-back-link"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to restaurant
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         LOGIN JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        const adminLoginForm =
+            document.getElementById(
+                "admin-login-form"
+            );
+
+
+        const adminPassword =
+            document.getElementById(
+                "admin-password"
+            );
+
+
+        const togglePassword =
+            document.getElementById(
+                "toggle-password"
+            );
+
+
+        const passwordEye =
+            document.getElementById(
+                "password-eye"
+            );
+
+
+        const loginMessage =
+            document.getElementById(
+                "admin-login-message"
+            );
+
+
+        const forgotPasswordButton =
+            document.getElementById(
+                "forgot-password-button"
+            );
+
+
+
+        /* =========================
+           SHOW / HIDE PASSWORD
+        ========================= */
+
+        togglePassword.addEventListener(
+            "click",
+            () => {
+
+                const hidden =
+                    adminPassword.type ===
+                    "password";
+
+
+                adminPassword.type =
+                    hidden
+                        ? "text"
+                        : "password";
+
+
+                passwordEye.className =
+                    hidden
+                        ? "fa-solid fa-eye-slash"
+                        : "fa-solid fa-eye";
+
+
+                togglePassword.setAttribute(
+                    "aria-label",
+                    hidden
+                        ? "Hide password"
+                        : "Show password"
+                );
+
+            }
+        );
+
+
+
+        /* =========================
+           LOGIN SUBMISSION
+        ========================= */
+
+        adminLoginForm.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+
+                loginMessage.className =
+                    "admin-login-message warning";
+
+
+                loginMessage.innerHTML = `
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Secure authentication will be connected
+                    to the restaurant backend.
+
+                `;
+
+            }
+        );
+
+
+
+        /* =========================
+           FORGOT PASSWORD
+        ========================= */
+
+        forgotPasswordButton.addEventListener(
+            "click",
+            () => {
+
+                loginMessage.className =
+                    "admin-login-message warning";
+
+
+                loginMessage.innerHTML = `
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Password recovery will be enabled
+                    with the secure authentication backend.
+
+                `;
+
+            }
+        );
+
+
+    </script>
+  <script src="admin.js"></script>
+
+</body>
+
+</html>
