@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Reserve your table at Signature Restaurant Phalia."
+    >
+
+    <title>Reservation | Signature Restaurant</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                Signature
+
+                <small>
+                    RESTAURANT · PHALIA
+                </small>
+
+            </a>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="reservation.html">
+                    Reservation
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+    <a href="cart.html" class="cart-link">
+
+        <i class="fa-solid fa-bag-shopping"></i>
+
+        Cart
+
+        <span id="cart-count">0</span>
+
+    </a>
+
+
+    <a
+        href="reservation.html"
+        class="btn header-book-button"
+    >
+        Book a table
+    </a>
+
+
+    <!-- Mobile Hamburger -->
+
+    <button
+        type="button"
+        class="mobile-menu-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+</div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main id="main-content">
+
+
+        <!-- =================================
+             HERO
+        ================================== -->
+
+        <section class="reservation-hero">
+
+            <div class="container">
+
+                <div class="reservation-hero-content">
+
+                    <p class="eyebrow">
+                        A PLACE AT OUR TABLE
+                    </p>
+
+                    <h1>
+                        Reserve your table
+                    </h1>
+
+                    <p>
+                        Family dinner, a catch-up
+                        with friends or simply a good meal —
+                        we’ll make room for you.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             RESERVATION SECTION
+        ================================== -->
+
+        <section class="reservation-section">
+
+            <div class="container">
+
+                <div class="reservation-layout">
+
+
+                    <!-- =========================
+                         FORM
+                    ========================== -->
+
+                    <form
+                        id="reservation-form"
+                        class="reservation-form"
+                    >
+
+
+                        <div class="reservation-form-header">
+
+                            <p class="eyebrow">
+                                BOOK YOUR VISIT
+                            </p>
+
+                            <h2>
+                                Tell us when you’re coming
+                            </h2>
+
+                            <p>
+                                Fill in the details below
+                                and we’ll save your reservation.
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Name + phone -->
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="reservation-name">
+                                    Full name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="reservation-name"
+                                    name="customerName"
+                                    placeholder="Your full name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="reservation-phone">
+                                    Phone number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="reservation-phone"
+                                    name="customerPhone"
+                                    placeholder="03XX XXXXXXX"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Date + Time -->
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="reservation-date">
+                                    Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="reservation-date"
+                                    name="reservationDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="reservation-time">
+                                    Time
+                                </label>
+
+                                <input
+                                    type="time"
+                                    id="reservation-time"
+                                    name="reservationTime"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Guests -->
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="guest-count">
+                                    Number of guests
+                                </label>
+
+                                <select
+                                    id="guest-count"
+                                    name="guestCount"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select guests
+                                    </option>
+
+                                    <option value="1">
+                                        1 Guest
+                                    </option>
+
+                                    <option value="2">
+                                        2 Guests
+                                    </option>
+
+                                    <option value="3">
+                                        3 Guests
+                                    </option>
+
+                                    <option value="4">
+                                        4 Guests
+                                    </option>
+
+                                    <option value="5">
+                                        5 Guests
+                                    </option>
+
+                                    <option value="6">
+                                        6 Guests
+                                    </option>
+
+                                    <option value="7">
+                                        7 Guests
+                                    </option>
+
+                                    <option value="8">
+                                        8 Guests
+                                    </option>
+
+                                    <option value="9+">
+                                        9+ Guests
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="seating">
+                                    Seating preference
+                                </label>
+
+                                <select
+                                    id="seating"
+                                    name="seatingPreference"
+                                >
+
+                                    <option value="No Preference">
+                                        No preference
+                                    </option>
+
+                                    <option value="Indoor">
+                                        Indoor
+                                    </option>
+
+                                    <option value="Quiet Area">
+                                        Quiet area
+                                    </option>
+
+                                    <option value="Family Area">
+                                        Family area
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Occasion -->
+
+                        <div class="form-group">
+
+                            <label for="occasion">
+                                Occasion
+                            </label>
+
+                            <select
+                                id="occasion"
+                                name="occasion"
+                            >
+
+                                <option value="General">
+                                    Regular dining
+                                </option>
+
+                                <option value="Birthday">
+                                    Birthday
+                                </option>
+
+                                <option value="Anniversary">
+                                    Anniversary
+                                </option>
+
+                                <option value="Family Gathering">
+                                    Family gathering
+                                </option>
+
+                                <option value="Business Meal">
+                                    Business meal
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- Requests -->
+
+                        <div class="form-group">
+
+                            <label for="reservation-notes">
+                                Special requests
+                            </label>
+
+                            <textarea
+                                id="reservation-notes"
+                                name="specialRequests"
+                                placeholder="High chair, birthday setup, preferred seating or anything else..."
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="btn reservation-submit"
+                        >
+
+                            Confirm reservation
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                        <p class="reservation-form-note">
+
+                            Your reservation will appear
+                            as pending until it is confirmed
+                            by the restaurant.
+
+                        </p>
+
+
+                    </form>
+
+
+
+                    <!-- =========================
+                         INFO PANEL
+                    ========================== -->
+
+                    <aside class="reservation-info">
+
+                        <p class="eyebrow">
+                            SIGNATURE PHALIA
+                        </p>
+
+                        <h2>
+                            Come hungry.
+                            Stay a little longer.
+                        </h2>
+
+
+                        <div class="reservation-info-list">
+
+
+                            <div class="reservation-info-item">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Open 24/7
+                                    </strong>
+
+                                    <p>
+                                        Monday – Sunday
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="reservation-info-item">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Find us
+                                    </strong>
+
+                                    <p>
+                                        Ghanian Road, Phalia
+                                    </p>
+
+                                    <p>
+                                        Near Al Rehman Hospital
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="reservation-info-item">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Call us
+                                    </strong>
+
+                                    <p>
+                                        0315 4267452
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="reservation-info-item">
+
+                                <i class="fa-solid fa-users"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Large groups
+                                    </strong>
+
+                                    <p>
+                                        For bigger gatherings,
+                                        tell us in the notes
+                                        so the team can prepare.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="reservation-info-card">
+
+                            <i class="fa-solid fa-utensils"></i>
+
+                            <h3>
+                                Already hungry?
+                            </h3>
+
+                            <p>
+                                Take a look at the menu
+                                before your visit.
+                            </p>
+
+                            <a
+                                href="menu.html"
+                                class="btn btn-outline"
+                            >
+                                View menu
+                            </a>
+
+                        </div>
+
+                    </aside>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         SUCCESS MODAL
+    ====================================== -->
+
+    <div
+        class="reservation-success-overlay"
+        id="reservation-success-overlay"
+    >
+
+        <div class="reservation-success-card">
+
+            <div class="success-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+
+            <p class="eyebrow">
+                RESERVATION RECEIVED
+            </p>
+
+
+            <h2>
+                Your table request is in.
+            </h2>
+
+
+            <p>
+                We’ve saved your reservation request.
+            </p>
+
+
+            <div class="reservation-number-box">
+
+                Reservation number
+
+                <strong id="reservation-number">
+                    #0000
+                </strong>
+
+            </div>
+
+
+            <p class="reservation-success-note">
+
+                The restaurant can confirm
+                the booking after reviewing it.
+
+            </p>
+
+
+            <a
+                href="index.html"
+                class="btn"
+            >
+                Back to home
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <h3>
+                        Signature Restaurant
+                    </h3>
+
+                    <p>
+                        A little care in every dish.
+                        A little Signature in every moment.
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4>
+                        Explore
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="menu.html">
+                                Our menu
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reservation.html">
+                                Book a table
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">
+                                Our story
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                Get in touch
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4>
+                        Find us
+                    </h4>
+
+                    <p>
+                        Ghanian Road, Phalia
+                    </p>
+
+                    <p>
+                        Near Al Rehman Hospital
+                    </p>
+
+                    <p>
+                        0315 4267452
+                    </p>
+
+                    <p>
+                        mrabd6695@gmail.com
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4>
+                        Always a good time
+                    </h4>
+
+                    <p>
+                        Monday – Sunday
+                    </p>
+
+                    <p>
+                        Open 24 hours
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Signature Restaurant.
+                    All rights reserved.
+                </p>
+
+                <p>
+                    Crafted by MrAbd.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="js/app.js"></script>
+
+
+    <!-- =====================================
+         RESERVATION JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+        const reservationForm =
+            document.getElementById(
+                "reservation-form"
+            );
+
+        const reservationDate =
+            document.getElementById(
+                "reservation-date"
+            );
+
+        const reservationOverlay =
+            document.getElementById(
+                "reservation-success-overlay"
+            );
+
+
+
+        /* =========================
+           MINIMUM DATE
+        ========================= */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const today =
+                    new Date();
+
+                const year =
+                    today.getFullYear();
+
+                const month =
+                    String(
+                        today.getMonth() + 1
+                    ).padStart(2, "0");
+
+                const day =
+                    String(
+                        today.getDate()
+                    ).padStart(2, "0");
+
+
+                reservationDate.min =
+                    `${year}-${month}-${day}`;
+
+            }
+        );
+
+
+
+        /* =========================
+           RESERVATION NUMBER
+        ========================= */
+
+        function generateReservationNumber() {
+
+            const number =
+                Date.now()
+                    .toString()
+                    .slice(-6);
+
+
+            return `RES-${number}`;
+
+        }
+
+
+
+        /* =========================
+           SAVE RESERVATION
+        ========================= */
+
+        reservationForm.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+
+                const formData =
+                    new FormData(
+                        reservationForm
+                    );
+
+
+                const reservation = {
+
+                    id:
+                        generateReservationNumber(),
+
+                    customerName:
+                        formData.get(
+                            "customerName"
+                        ),
+
+                    customerPhone:
+                        formData.get(
+                            "customerPhone"
+                        ),
+
+                    date:
+                        formData.get(
+                            "reservationDate"
+                        ),
+
+                    time:
+                        formData.get(
+                            "reservationTime"
+                        ),
+
+                    guests:
+                        formData.get(
+                            "guestCount"
+                        ),
+
+                    seating:
+                        formData.get(
+                            "seatingPreference"
+                        ),
+
+                    occasion:
+                        formData.get(
+                            "occasion"
+                        ),
+
+                    specialRequests:
+                        formData.get(
+                            "specialRequests"
+                        ),
+
+                    status:
+                        "Pending",
+
+                    createdAt:
+                        new Date()
+                            .toISOString()
+
+                };
+
+
+                const reservations =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "signatureReservations"
+                        )
+                    ) || [];
+
+
+                reservations.push(
+                    reservation
+                );
+
+
+                localStorage.setItem(
+                    "signatureReservations",
+                    JSON.stringify(
+                        reservations
+                    )
+                );
+
+
+                document.getElementById(
+                    "reservation-number"
+                ).textContent =
+                    `#${reservation.id}`;
+
+
+                reservationOverlay
+                    .classList
+                    .add("show");
+
+
+                reservationForm.reset();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

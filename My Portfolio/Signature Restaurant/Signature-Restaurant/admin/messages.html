@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>Messages | Signature Restaurant Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="admin-body">
+
+
+<div class="admin-layout">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="admin-sidebar"
+    >
+
+        <div class="admin-sidebar-header">
+
+            <a
+                href="dashboard.html"
+                class="admin-brand"
+            >
+
+                Signature
+
+                <small>
+                    ADMIN PANEL
+                </small>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="admin-sidebar-close"
+                id="admin-sidebar-close"
+                aria-label="Close menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <div class="admin-owner">
+
+            <div class="admin-owner-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Restaurant owner
+                </span>
+
+                <strong>
+                    Signature
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="admin-nav">
+
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="orders.html">
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <a href="reservations.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span>
+                    Reservations
+                </span>
+
+            </a>
+
+
+            <a href="menu-manager.html">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <span>
+                    Menu Manager
+                </span>
+
+            </a>
+
+
+            <a
+                href="messages.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-message"></i>
+
+                <span>
+                    Messages
+                </span>
+
+                <span
+                    class="admin-nav-badge"
+                    id="messages-nav-badge"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <div class="admin-nav-divider"></div>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <a
+                href="../contact.html"
+                target="_blank"
+            >
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                <span>
+                    View contact page
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <div class="admin-sidebar-footer">
+
+            <a
+                href="login.html"
+                class="admin-logout-button"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Log out
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="admin-topbar">
+
+            <div class="admin-topbar-left">
+
+                <button
+                    type="button"
+                    class="admin-menu-button"
+                    id="admin-menu-button"
+                    aria-label="Open menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div>
+
+                    <p>
+                        Restaurant management
+                    </p>
+
+                    <strong>
+                        Messages
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-topbar-right">
+
+                <div class="admin-status">
+
+                    <span></span>
+
+                    Restaurant open
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             CONTENT
+        ================================== -->
+
+        <main class="admin-content">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="admin-page-heading">
+
+                <div>
+
+                    <p class="admin-eyebrow">
+                        CUSTOMER ENQUIRIES
+                    </p>
+
+                    <h1>
+                        Messages
+                    </h1>
+
+                    <p>
+                        Read and manage messages
+                        sent through the contact page.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 STATS
+            ================================== -->
+
+            <section class="message-admin-stats">
+
+
+                <article>
+
+                    <span>
+                        Total messages
+                    </span>
+
+                    <strong id="message-total">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Unread
+                    </span>
+
+                    <strong id="message-unread">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Read
+                    </span>
+
+                    <strong id="message-read">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        Today
+                    </span>
+
+                    <strong id="message-today">
+                        0
+                    </strong>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 FILTERS
+            ================================== -->
+
+            <section class="message-admin-toolbar">
+
+
+                <div class="admin-order-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="message-search"
+                        placeholder="Search name, phone, email or message..."
+                    >
+
+                </div>
+
+
+                <select id="message-status-filter">
+
+                    <option value="All">
+                        All messages
+                    </option>
+
+                    <option value="Unread">
+                        Unread
+                    </option>
+
+                    <option value="Read">
+                        Read
+                    </option>
+
+                </select>
+
+
+                <select id="message-subject-filter">
+
+                    <option value="All">
+                        All subjects
+                    </option>
+
+                    <option value="General">
+                        General enquiry
+                    </option>
+
+                    <option value="Order">
+                        Order question
+                    </option>
+
+                    <option value="Reservation">
+                        Reservation
+                    </option>
+
+                    <option value="Gathering">
+                        Family gathering / event
+                    </option>
+
+                    <option value="Feedback">
+                        Feedback
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 MESSAGE LIST
+            ================================== -->
+
+            <section class="admin-messages-panel">
+
+
+                <div
+                    class="admin-messages-list"
+                    id="admin-messages-list"
+                ></div>
+
+
+
+                <div
+                    class="admin-empty-state messages-page-empty"
+                    id="messages-page-empty"
+                >
+
+                    <i class="fa-solid fa-envelope-open"></i>
+
+                    <h3>
+                        No messages found
+                    </h3>
+
+                    <p>
+                        Customer enquiries
+                        will appear here.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================
+     MESSAGE DETAILS MODAL
+====================================== -->
+
+<div
+    class="admin-message-modal"
+    id="admin-message-modal"
+>
+
+    <div class="admin-message-modal-card">
+
+
+        <!-- HEADER -->
+
+        <div class="admin-order-modal-header">
+
+            <div>
+
+                <p class="admin-eyebrow">
+                    MESSAGE DETAILS
+                </p>
+
+                <h2 id="modal-message-subject">
+                    Customer message
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="close-message-modal"
+                aria-label="Close message"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- CONTACT INFO -->
+
+        <div class="message-modal-contact-grid">
+
+
+            <div class="admin-order-detail-box">
+
+                <span>
+                    Customer
+                </span>
+
+                <strong id="modal-message-name">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-order-detail-box">
+
+                <span>
+                    Phone
+                </span>
+
+                <strong id="modal-message-phone">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-order-detail-box">
+
+                <span>
+                    Email
+                </span>
+
+                <strong id="modal-message-email">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-order-detail-box">
+
+                <span>
+                    Received
+                </span>
+
+                <strong id="modal-message-date">
+                    —
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div class="message-modal-body">
+
+            <span>
+                Message
+            </span>
+
+            <p id="modal-message-text">
+                —
+            </p>
+
+        </div>
+
+
+
+        <!-- REFERENCE -->
+
+        <div class="message-reference-row">
+
+            <span>
+                Reference
+            </span>
+
+            <strong id="modal-message-id">
+                —
+            </strong>
+
+        </div>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="message-modal-actions">
+
+
+            <a
+                href="#"
+                class="btn btn-outline"
+                id="message-phone-action"
+            >
+
+                <i class="fa-solid fa-phone"></i>
+
+                Call
+
+            </a>
+
+
+            <a
+                href="#"
+                class="btn btn-outline"
+                id="message-email-action"
+            >
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Email
+
+            </a>
+
+
+            <button
+                type="button"
+                class="btn admin-primary-button"
+                id="toggle-message-status"
+            >
+
+                Mark unread
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     DELETE CONFIRMATION
+====================================== -->
+
+<div
+    class="message-delete-modal"
+    id="message-delete-modal"
+>
+
+    <div class="menu-delete-card">
+
+
+        <div class="menu-delete-icon">
+
+            <i class="fa-solid fa-trash"></i>
+
+        </div>
+
+
+        <h2>
+            Delete this message?
+        </h2>
+
+
+        <p>
+            This will remove the customer
+            message from the demo data.
+        </p>
+
+
+        <div class="menu-delete-actions">
+
+
+            <button
+                type="button"
+                class="btn btn-outline"
+                id="cancel-message-delete"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="btn menu-delete-confirm"
+                id="confirm-message-delete"
+            >
+                Delete
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+====================================== -->
+
+<script>
+
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const messagesList =
+        document.getElementById(
+            "admin-messages-list"
+        );
+
+
+    const emptyState =
+        document.getElementById(
+            "messages-page-empty"
+        );
+
+
+    const searchInput =
+        document.getElementById(
+            "message-search"
+        );
+
+
+    const statusFilter =
+        document.getElementById(
+            "message-status-filter"
+        );
+
+
+    const subjectFilter =
+        document.getElementById(
+            "message-subject-filter"
+        );
+
+
+    const messageModal =
+        document.getElementById(
+            "admin-message-modal"
+        );
+
+
+    const deleteModal =
+        document.getElementById(
+            "message-delete-modal"
+        );
+
+
+    let selectedMessageId =
+        null;
+
+
+    let deleteMessageId =
+        null;
+
+
+
+    /* =========================
+       GET MESSAGES
+    ========================= */
+
+    function getMessages() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem(
+                    "signatureMessages"
+                )
+            ) || [];
+
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+
+
+    /* =========================
+       SAVE MESSAGES
+    ========================= */
+
+    function saveMessages(
+        messages
+    ) {
+
+        localStorage.setItem(
+            "signatureMessages",
+            JSON.stringify(
+                messages
+            )
+        );
+
+    }
+
+
+
+    /* =========================
+       FORMAT DATE
+    ========================= */
+
+    function formatMessageDate(
+        dateString
+    ) {
+
+        if (!dateString) {
+            return "Unknown";
+        }
+
+
+        const date =
+            new Date(
+                dateString
+            );
+
+
+        return date.toLocaleString(
+            "en-PK",
+            {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                hour: "numeric",
+                minute: "2-digit"
+            }
+        );
+
+    }
+
+
+
+    /* =========================
+       TODAY
+    ========================= */
+
+    function isToday(
+        dateString
+    ) {
+
+        if (!dateString) {
+            return false;
+        }
+
+
+        const date =
+            new Date(
+                dateString
+            );
+
+
+        const today =
+            new Date();
+
+
+        return (
+            date.getFullYear() ===
+            today.getFullYear()
+            &&
+            date.getMonth() ===
+            today.getMonth()
+            &&
+            date.getDate() ===
+            today.getDate()
+        );
+
+    }
+
+
+
+    /* =========================
+       UPDATE STATS
+    ========================= */
+
+    function updateMessageStats() {
+
+        const messages =
+            getMessages();
+
+
+        const unread =
+            messages.filter(
+                message =>
+                    message.status ===
+                    "Unread"
+            ).length;
+
+
+        const read =
+            messages.filter(
+                message =>
+                    message.status ===
+                    "Read"
+            ).length;
+
+
+        const today =
+            messages.filter(
+                message =>
+                    isToday(
+                        message.createdAt
+                    )
+            ).length;
+
+
+        document.getElementById(
+            "message-total"
+        ).textContent =
+            messages.length;
+
+
+        document.getElementById(
+            "message-unread"
+        ).textContent =
+            unread;
+
+
+        document.getElementById(
+            "message-read"
+        ).textContent =
+            read;
+
+
+        document.getElementById(
+            "message-today"
+        ).textContent =
+            today;
+
+
+        document.getElementById(
+            "messages-nav-badge"
+        ).textContent =
+            unread;
+
+    }
+
+
+
+    /* =========================
+       RENDER MESSAGES
+    ========================= */
+
+    function renderMessages() {
+
+        const messages =
+            getMessages();
+
+
+        const searchTerm =
+            searchInput.value
+                .trim()
+                .toLowerCase();
+
+
+        const statusValue =
+            statusFilter.value;
+
+
+        const subjectValue =
+            subjectFilter.value;
+
+
+        let filtered =
+            messages.filter(
+                message => {
+
+
+                    const combinedText =
+                        [
+                            message.name,
+                            message.phone,
+                            message.email,
+                            message.subject,
+                            message.message,
+                            message.id
+                        ]
+                        .join(" ")
+                        .toLowerCase();
+
+
+                    const searchMatch =
+                        combinedText.includes(
+                            searchTerm
+                        );
+
+
+                    const statusMatch =
+                        statusValue ===
+                        "All"
+                        ||
+                        message.status ===
+                        statusValue;
+
+
+                    const subjectMatch =
+                        subjectValue ===
+                        "All"
+                        ||
+                        message.subject ===
+                        subjectValue;
+
+
+                    return (
+                        searchMatch &&
+                        statusMatch &&
+                        subjectMatch
+                    );
+
+                }
+            );
+
+
+        filtered =
+            [...filtered]
+                .reverse();
+
+
+        messagesList.innerHTML =
+            "";
+
+
+        if (
+            filtered.length === 0
+        ) {
+
+            emptyState.style.display =
+                "flex";
+
+            return;
+
+        }
+
+
+        emptyState.style.display =
+            "none";
+
+
+        filtered.forEach(
+            message => {
+
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                card.className =
+                    `admin-message-card ${
+                        message.status ===
+                        "Unread"
+                            ? "unread"
+                            : ""
+                    }`;
+
+
+                card.innerHTML = `
+
+                    <div class="message-card-status">
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="message-card-main">
+
+                        <div class="message-card-heading">
+
+                            <strong>
+                                ${
+                                    message.name ||
+                                    "Customer"
+                                }
+                            </strong>
+
+                            <span>
+                                ${
+                                    message.subject ||
+                                    "General"
+                                }
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            ${
+                                message.message ||
+                                "No message content."
+                            }
+                        </p>
+
+
+                        <small>
+
+                            ${
+                                message.phone ||
+                                "No phone"
+                            }
+
+                            ·
+
+                            ${
+                                formatMessageDate(
+                                    message.createdAt
+                                )
+                            }
+
+                        </small>
+
+                    </div>
+
+
+                    <div class="message-card-state">
+
+                        <span
+                            class="message-read-badge ${
+                                message.status ===
+                                "Unread"
+                                    ? "unread"
+                                    : "read"
+                            }"
+                        >
+
+                            ${
+                                message.status ||
+                                "Unread"
+                            }
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-card-actions">
+
+
+                        <button
+                            type="button"
+                            class="message-view-button"
+                            data-id="${message.id}"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            View
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="message-delete-button"
+                            data-id="${message.id}"
+                            aria-label="Delete message"
+                        >
+
+                            <i class="fa-solid fa-trash"></i>
+
+                        </button>
+
+
+                    </div>
+
+                `;
+
+
+                messagesList
+                    .appendChild(
+                        card
+                    );
+
+            }
+        );
+
+
+        attachMessageEvents();
+
+    }
+
+
+
+    /* =========================
+       EVENTS
+    ========================= */
+
+    function attachMessageEvents() {
+
+
+        document
+            .querySelectorAll(
+                ".message-view-button"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            openMessage(
+                                button.dataset.id
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        document
+            .querySelectorAll(
+                ".message-delete-button"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            deleteMessageId =
+                                button.dataset.id;
+
+
+                            deleteModal.classList.add(
+                                "show"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+    }
+
+
+
+    /* =========================
+       OPEN MESSAGE
+    ========================= */
+
+    function openMessage(id) {
+
+        const messages =
+            getMessages();
+
+
+        const message =
+            messages.find(
+                message =>
+                    message.id === id
+            );
+
+
+        if (!message) {
+            return;
+        }
+
+
+        selectedMessageId =
+            message.id;
+
+
+        /* Automatically mark read */
+
+        if (
+            message.status ===
+            "Unread"
+        ) {
+
+            message.status =
+                "Read";
+
+
+            saveMessages(
+                messages
+            );
+
+        }
+
+
+        document.getElementById(
+            "modal-message-subject"
+        ).textContent =
+            message.subject ||
+            "Customer message";
+
+
+        document.getElementById(
+            "modal-message-name"
+        ).textContent =
+            message.name ||
+            "Customer";
+
+
+        document.getElementById(
+            "modal-message-phone"
+        ).textContent =
+            message.phone ||
+            "No phone";
+
+
+        document.getElementById(
+            "modal-message-email"
+        ).textContent =
+            message.email ||
+            "No email";
+
+
+        document.getElementById(
+            "modal-message-date"
+        ).textContent =
+            formatMessageDate(
+                message.createdAt
+            );
+
+
+        document.getElementById(
+            "modal-message-text"
+        ).textContent =
+            message.message ||
+            "No message content.";
+
+
+        document.getElementById(
+            "modal-message-id"
+        ).textContent =
+            message.id ||
+            "—";
+
+
+        const phoneAction =
+            document.getElementById(
+                "message-phone-action"
+            );
+
+
+        if (message.phone) {
+
+            phoneAction.href =
+                `tel:${message.phone}`;
+
+            phoneAction.style.display =
+                "inline-flex";
+
+        } else {
+
+            phoneAction.style.display =
+                "none";
+
+        }
+
+
+        const emailAction =
+            document.getElementById(
+                "message-email-action"
+            );
+
+
+        if (message.email) {
+
+            emailAction.href =
+                `mailto:${message.email}`;
+
+            emailAction.style.display =
+                "inline-flex";
+
+        } else {
+
+            emailAction.style.display =
+                "none";
+
+        }
+
+
+        updateToggleButton(
+            "Read"
+        );
+
+
+        messageModal.classList.add(
+            "show"
+        );
+
+
+        updateMessageStats();
+
+        renderMessages();
+
+    }
+
+
+
+    /* =========================
+       TOGGLE STATUS
+    ========================= */
+
+    function updateToggleButton(
+        status
+    ) {
+
+        const button =
+            document.getElementById(
+                "toggle-message-status"
+            );
+
+
+        button.textContent =
+            status === "Read"
+                ? "Mark unread"
+                : "Mark read";
+
+    }
+
+
+
+    document.getElementById(
+        "toggle-message-status"
+    ).addEventListener(
+        "click",
+        () => {
+
+
+            if (!selectedMessageId) {
+                return;
+            }
+
+
+            const messages =
+                getMessages();
+
+
+            const message =
+                messages.find(
+                    message =>
+                        message.id ===
+                        selectedMessageId
+                );
+
+
+            if (!message) {
+                return;
+            }
+
+
+            message.status =
+                message.status ===
+                "Read"
+                    ? "Unread"
+                    : "Read";
+
+
+            saveMessages(
+                messages
+            );
+
+
+            updateToggleButton(
+                message.status
+            );
+
+
+            updateMessageStats();
+
+            renderMessages();
+
+        }
+    );
+
+
+
+    /* =========================
+       CLOSE MESSAGE
+    ========================= */
+
+    function closeMessageModal() {
+
+        messageModal.classList.remove(
+            "show"
+        );
+
+
+        selectedMessageId =
+            null;
+
+    }
+
+
+    document.getElementById(
+        "close-message-modal"
+    ).addEventListener(
+        "click",
+        closeMessageModal
+    );
+
+
+    messageModal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target ===
+                messageModal
+            ) {
+
+                closeMessageModal();
+
+            }
+
+        }
+    );
+
+
+
+    /* =========================
+       DELETE MESSAGE
+    ========================= */
+
+    document.getElementById(
+        "confirm-message-delete"
+    ).addEventListener(
+        "click",
+        () => {
+
+
+            if (!deleteMessageId) {
+                return;
+            }
+
+
+            const messages =
+                getMessages()
+                    .filter(
+                        message =>
+                            message.id !==
+                            deleteMessageId
+                    );
+
+
+            saveMessages(
+                messages
+            );
+
+
+            deleteMessageId =
+                null;
+
+
+            deleteModal.classList.remove(
+                "show"
+            );
+
+
+            updateMessageStats();
+
+            renderMessages();
+
+        }
+    );
+
+
+    document.getElementById(
+        "cancel-message-delete"
+    ).addEventListener(
+        "click",
+        () => {
+
+            deleteMessageId =
+                null;
+
+
+            deleteModal.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+
+    deleteModal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target ===
+                deleteModal
+            ) {
+
+                deleteMessageId =
+                    null;
+
+
+                deleteModal.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* =========================
+       FILTERS
+    ========================= */
+
+    searchInput.addEventListener(
+        "input",
+        renderMessages
+    );
+
+
+    statusFilter.addEventListener(
+        "change",
+        renderMessages
+    );
+
+
+    subjectFilter.addEventListener(
+        "change",
+        renderMessages
+    );
+
+
+
+    /* =========================
+       MOBILE SIDEBAR
+    ========================= */
+
+    const sidebar =
+        document.getElementById(
+            "admin-sidebar"
+        );
+
+
+    const menuButton =
+        document.getElementById(
+            "admin-menu-button"
+        );
+
+
+    const sidebarClose =
+        document.getElementById(
+            "admin-sidebar-close"
+        );
+
+
+    menuButton.addEventListener(
+        "click",
+        () => {
+
+            sidebar.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+
+    sidebarClose.addEventListener(
+        "click",
+        () => {
+
+            sidebar.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+
+
+    /* =========================
+       INITIALIZE
+    ========================= */
+
+    updateMessageStats();
+
+    renderMessages();
+
+
+</script>
+
+
+</body>
+
+</html>

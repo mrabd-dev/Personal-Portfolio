@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>Reservations | Signature Restaurant Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="admin-body">
+
+
+    <div class="admin-layout">
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="admin-sidebar"
+        >
+
+            <div class="admin-sidebar-header">
+
+                <a
+                    href="dashboard.html"
+                    class="admin-brand"
+                >
+                    Signature
+
+                    <small>
+                        ADMIN PANEL
+                    </small>
+                </a>
+
+
+                <button
+                    type="button"
+                    class="admin-sidebar-close"
+                    id="admin-sidebar-close"
+                    aria-label="Close menu"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div class="admin-owner">
+
+                <div class="admin-owner-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <span>Restaurant owner</span>
+                    <strong>Signature</strong>
+                </div>
+
+            </div>
+
+
+            <nav class="admin-nav">
+
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="orders.html">
+
+                    <i class="fa-solid fa-receipt"></i>
+
+                    <span>
+                        Orders
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="reservations.html"
+                    class="active"
+                >
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>
+                        Reservations
+                    </span>
+
+                    <span
+                        class="admin-nav-badge"
+                        id="reservation-nav-badge"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="menu-manager.html">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                    <span>
+                        Menu Manager
+                    </span>
+
+                </a>
+
+
+                <a href="messages.html">
+
+                    <i class="fa-solid fa-message"></i>
+
+                    <span>
+                        Messages
+                    </span>
+
+                </a>
+
+
+                <div class="admin-nav-divider"></div>
+
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../index.html"
+                    target="_blank"
+                >
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    <span>
+                        View website
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="admin-sidebar-footer">
+
+                <a
+                    href="login.html"
+                    class="admin-logout-button"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Log out
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================
+             MAIN
+        ====================================== -->
+
+        <div class="admin-main">
+
+
+            <!-- TOPBAR -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="admin-menu-button"
+                        aria-label="Open menu"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+
+                    <div>
+                        <p>Restaurant management</p>
+                        <strong>Reservations</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-right">
+
+                    <div class="admin-status">
+
+                        <span></span>
+
+                        Restaurant open
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================
+                 PAGE CONTENT
+            ================================== -->
+
+            <main class="admin-content">
+
+
+                <!-- PAGE HEADING -->
+
+                <div class="admin-page-heading">
+
+                    <div>
+
+                        <p class="admin-eyebrow">
+                            TABLE BOOKINGS
+                        </p>
+
+                        <h1>
+                            Reservations
+                        </h1>
+
+                        <p>
+                            Review table requests,
+                            confirm bookings
+                            and manage guest arrivals.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="../reservation.html"
+                        target="_blank"
+                        class="btn admin-primary-button"
+                    >
+
+                        View booking page
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =================================
+                     STATS
+                ================================== -->
+
+                <section class="reservation-admin-stats">
+
+
+                    <article>
+
+                        <span>
+                            All reservations
+                        </span>
+
+                        <strong id="reservation-total">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="reservation-pending">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Confirmed
+                        </span>
+
+                        <strong id="reservation-confirmed">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Today
+                        </span>
+
+                        <strong id="reservation-today">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                </section>
+
+
+
+                <!-- =================================
+                     FILTERS
+                ================================== -->
+
+                <section class="reservation-admin-toolbar">
+
+
+                    <div class="admin-order-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="reservation-search"
+                            placeholder="Search guest, phone or reservation..."
+                        >
+
+                    </div>
+
+
+                    <select id="reservation-status-filter">
+
+                        <option value="All">
+                            All statuses
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Confirmed">
+                            Confirmed
+                        </option>
+
+                        <option value="Seated">
+                            Seated
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                        <option value="Cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+
+                    <input
+                        type="date"
+                        id="reservation-date-filter"
+                        aria-label="Filter by reservation date"
+                    >
+
+
+                </section>
+
+
+
+                <!-- =================================
+                     RESERVATION LIST
+                ================================== -->
+
+                <section class="admin-reservations-panel">
+
+
+                    <div
+                        class="admin-reservations-list"
+                        id="admin-reservations-list"
+                    ></div>
+
+
+
+                    <div
+                        class="admin-empty-state reservations-page-empty"
+                        id="reservations-page-empty"
+                    >
+
+                        <i class="fa-solid fa-calendar-xmark"></i>
+
+                        <h3>
+                            No reservations found
+                        </h3>
+
+                        <p>
+                            Customer table requests
+                            will appear here.
+                        </p>
+
+                    </div>
+
+
+                </section>
+
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         RESERVATION DETAILS MODAL
+    ====================================== -->
+
+    <div
+        class="admin-reservation-modal"
+        id="admin-reservation-modal"
+    >
+
+        <div class="admin-reservation-modal-card">
+
+
+            <!-- HEADER -->
+
+            <div class="admin-order-modal-header">
+
+                <div>
+
+                    <p class="admin-eyebrow">
+                        RESERVATION DETAILS
+                    </p>
+
+                    <h2 id="modal-reservation-id">
+                        Reservation
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="close-reservation-modal"
+                    aria-label="Close reservation details"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- DETAILS -->
+
+            <div class="reservation-modal-grid">
+
+
+                <div class="admin-order-detail-box">
+
+                    <span>
+                        Guest
+                    </span>
+
+                    <strong id="modal-reservation-name">
+                        —
+                    </strong>
+
+                    <p id="modal-reservation-phone">
+                        —
+                    </p>
+
+                </div>
+
+
+
+                <div class="admin-order-detail-box">
+
+                    <span>
+                        Guests
+                    </span>
+
+                    <strong id="modal-reservation-guests">
+                        —
+                    </strong>
+
+                    <p>
+                        Total guests
+                    </p>
+
+                </div>
+
+
+
+                <div class="admin-order-detail-box">
+
+                    <span>
+                        Date
+                    </span>
+
+                    <strong id="modal-reservation-date">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-order-detail-box">
+
+                    <span>
+                        Time
+                    </span>
+
+                    <strong id="modal-reservation-time">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-order-detail-box">
+
+                    <span>
+                        Seating
+                    </span>
+
+                    <strong id="modal-reservation-seating">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-order-detail-box">
+
+                    <span>
+                        Occasion
+                    </span>
+
+                    <strong id="modal-reservation-occasion">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- REQUESTS -->
+
+            <div class="admin-order-notes">
+
+                <span>
+                    Special requests
+                </span>
+
+                <p id="modal-reservation-notes">
+                    No special requests.
+                </p>
+
+            </div>
+
+
+
+            <!-- CREATED -->
+
+            <div class="reservation-created-box">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <div>
+
+                    <span>
+                        Request received
+                    </span>
+
+                    <strong id="modal-reservation-created">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATUS CONTROL -->
+
+            <div class="admin-order-status-control">
+
+                <label for="reservation-status-select">
+                    Update reservation status
+                </label>
+
+
+                <div>
+
+                    <select id="reservation-status-select">
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Confirmed">
+                            Confirmed
+                        </option>
+
+                        <option value="Seated">
+                            Seated
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                        <option value="Cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        type="button"
+                        class="btn"
+                        id="save-reservation-status"
+                    >
+                        Save status
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        /* =========================
+           ELEMENTS
+        ========================= */
+
+        const reservationList =
+            document.getElementById(
+                "admin-reservations-list"
+            );
+
+
+        const emptyState =
+            document.getElementById(
+                "reservations-page-empty"
+            );
+
+
+        const searchInput =
+            document.getElementById(
+                "reservation-search"
+            );
+
+
+        const statusFilter =
+            document.getElementById(
+                "reservation-status-filter"
+            );
+
+
+        const dateFilter =
+            document.getElementById(
+                "reservation-date-filter"
+            );
+
+
+        const modal =
+            document.getElementById(
+                "admin-reservation-modal"
+            );
+
+
+        const closeModalButton =
+            document.getElementById(
+                "close-reservation-modal"
+            );
+
+
+        const statusSelect =
+            document.getElementById(
+                "reservation-status-select"
+            );
+
+
+        const saveStatusButton =
+            document.getElementById(
+                "save-reservation-status"
+            );
+
+
+        let selectedReservationId =
+            null;
+
+
+
+        /* =========================
+           GET RESERVATIONS
+        ========================= */
+
+        function getReservations() {
+
+            try {
+
+                return JSON.parse(
+                    localStorage.getItem(
+                        "signatureReservations"
+                    )
+                ) || [];
+
+            } catch (error) {
+
+                return [];
+
+            }
+
+        }
+
+
+
+        /* =========================
+           SAVE RESERVATIONS
+        ========================= */
+
+        function saveReservations(
+            reservations
+        ) {
+
+            localStorage.setItem(
+                "signatureReservations",
+                JSON.stringify(
+                    reservations
+                )
+            );
+
+        }
+
+
+
+        /* =========================
+           FORMAT CREATED DATE
+        ========================= */
+
+        function formatCreatedDate(
+            dateString
+        ) {
+
+            if (!dateString) {
+                return "Unknown";
+            }
+
+
+            const date =
+                new Date(dateString);
+
+
+            return date.toLocaleString(
+                "en-PK",
+                {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "2-digit"
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           FORMAT BOOKING DATE
+        ========================= */
+
+        function formatBookingDate(
+            dateString
+        ) {
+
+            if (!dateString) {
+                return "No date";
+            }
+
+
+            const parts =
+                dateString.split("-");
+
+
+            if (parts.length !== 3) {
+                return dateString;
+            }
+
+
+            const date =
+                new Date(
+                    Number(parts[0]),
+                    Number(parts[1]) - 1,
+                    Number(parts[2])
+                );
+
+
+            return date.toLocaleDateString(
+                "en-PK",
+                {
+                    weekday: "short",
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           STATUS CLASS
+        ========================= */
+
+        function getStatusClass(status) {
+
+            const value =
+                String(status || "")
+                    .toLowerCase();
+
+
+            if (
+                value === "confirmed" ||
+                value === "seated" ||
+                value === "completed"
+            ) {
+
+                return "confirmed";
+
+            }
+
+
+            if (
+                value === "cancelled"
+            ) {
+
+                return "cancelled";
+
+            }
+
+
+            return "pending";
+
+        }
+
+
+
+        /* =========================
+           TODAY STRING
+        ========================= */
+
+        function getTodayString() {
+
+            const today =
+                new Date();
+
+
+            const year =
+                today.getFullYear();
+
+
+            const month =
+                String(
+                    today.getMonth() + 1
+                ).padStart(2, "0");
+
+
+            const day =
+                String(
+                    today.getDate()
+                ).padStart(2, "0");
+
+
+            return `${year}-${month}-${day}`;
+
+        }
+
+
+
+        /* =========================
+           UPDATE STATS
+        ========================= */
+
+        function updateReservationStats() {
+
+            const reservations =
+                getReservations();
+
+
+            const pending =
+                reservations.filter(
+                    reservation =>
+                        reservation.status ===
+                        "Pending"
+                ).length;
+
+
+            const confirmed =
+                reservations.filter(
+                    reservation =>
+                        reservation.status ===
+                        "Confirmed"
+                ).length;
+
+
+            const today =
+                reservations.filter(
+                    reservation =>
+                        reservation.date ===
+                        getTodayString()
+                ).length;
+
+
+            document.getElementById(
+                "reservation-total"
+            ).textContent =
+                reservations.length;
+
+
+            document.getElementById(
+                "reservation-pending"
+            ).textContent =
+                pending;
+
+
+            document.getElementById(
+                "reservation-confirmed"
+            ).textContent =
+                confirmed;
+
+
+            document.getElementById(
+                "reservation-today"
+            ).textContent =
+                today;
+
+
+            document.getElementById(
+                "reservation-nav-badge"
+            ).textContent =
+                pending;
+
+        }
+
+
+
+        /* =========================
+           RENDER RESERVATIONS
+        ========================= */
+
+        function renderReservations() {
+
+            const reservations =
+                getReservations();
+
+
+            const searchTerm =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+
+            const selectedStatus =
+                statusFilter.value;
+
+
+            const selectedDate =
+                dateFilter.value;
+
+
+            let filteredReservations =
+                reservations.filter(
+                    reservation => {
+
+
+                        const name =
+                            String(
+                                reservation.customerName ||
+                                ""
+                            );
+
+
+                        const phone =
+                            String(
+                                reservation.customerPhone ||
+                                ""
+                            );
+
+
+                        const id =
+                            String(
+                                reservation.id ||
+                                ""
+                            );
+
+
+                        const searchMatch =
+                            name
+                                .toLowerCase()
+                                .includes(searchTerm)
+                            ||
+                            phone
+                                .toLowerCase()
+                                .includes(searchTerm)
+                            ||
+                            id
+                                .toLowerCase()
+                                .includes(searchTerm);
+
+
+                        const statusMatch =
+                            selectedStatus === "All"
+                            ||
+                            reservation.status ===
+                            selectedStatus;
+
+
+                        const dateMatch =
+                            !selectedDate
+                            ||
+                            reservation.date ===
+                            selectedDate;
+
+
+                        return (
+                            searchMatch &&
+                            statusMatch &&
+                            dateMatch
+                        );
+
+                    }
+                );
+
+
+            filteredReservations =
+                [...filteredReservations]
+                    .reverse();
+
+
+            reservationList.innerHTML =
+                "";
+
+
+            if (
+                filteredReservations
+                    .length === 0
+            ) {
+
+                emptyState.style.display =
+                    "flex";
+
+                return;
+
+            }
+
+
+            emptyState.style.display =
+                "none";
+
+
+            filteredReservations.forEach(
+                reservation => {
+
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "admin-reservation-card";
+
+
+                    card.innerHTML = `
+
+                        <div class="reservation-card-date">
+
+                            <span>
+                                ${
+                                    reservation.date
+                                    ? reservation.date
+                                        .split("-")[2]
+                                    : "--"
+                                }
+                            </span>
+
+                            <small>
+                                ${
+                                    reservation.date
+                                    ? new Date(
+                                        reservation.date +
+                                        "T12:00:00"
+                                    )
+                                    .toLocaleDateString(
+                                        "en-PK",
+                                        {
+                                            month:
+                                                "short"
+                                        }
+                                    )
+                                    : ""
+                                }
+                            </small>
+
+                        </div>
+
+
+                        <div class="reservation-card-main">
+
+                            <div class="reservation-card-title">
+
+                                <strong>
+                                    ${
+                                        reservation.customerName ||
+                                        "Guest"
+                                    }
+                                </strong>
+
+                                <span
+                                    class="admin-status-badge ${getStatusClass(
+                                        reservation.status
+                                    )}"
+                                >
+                                    ${
+                                        reservation.status ||
+                                        "Pending"
+                                    }
+                                </span>
+
+                            </div>
+
+
+                            <p>
+
+                                <i class="fa-regular fa-clock"></i>
+
+                                ${
+                                    reservation.time ||
+                                    "No time"
+                                }
+
+                                <span>·</span>
+
+                                <i class="fa-solid fa-users"></i>
+
+                                ${
+                                    reservation.guests ||
+                                    0
+                                }
+                                guest${
+                                    String(
+                                        reservation.guests
+                                    ) === "1"
+                                        ? ""
+                                        : "s"
+                                }
+
+                            </p>
+
+
+                            <small>
+                                ${
+                                    reservation.seating ||
+                                    "No preference"
+                                }
+                                ·
+                                ${
+                                    reservation.occasion ||
+                                    "General"
+                                }
+                            </small>
+
+                        </div>
+
+
+                        <div class="reservation-card-contact">
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <strong>
+                                ${
+                                    reservation.customerPhone ||
+                                    "No phone"
+                                }
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="admin-order-view-button reservation-view-button"
+                            data-reservation-id="${
+                                reservation.id
+                            }"
+                        >
+
+                            View details
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    `;
+
+
+                    reservationList
+                        .appendChild(card);
+
+                }
+            );
+
+
+
+            document
+                .querySelectorAll(
+                    ".reservation-view-button"
+                )
+                .forEach(button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            openReservationModal(
+                                button.dataset
+                                    .reservationId
+                            );
+
+                        }
+                    );
+
+                });
+
+        }
+
+
+
+        /* =========================
+           OPEN RESERVATION MODAL
+        ========================= */
+
+        function openReservationModal(
+            reservationId
+        ) {
+
+            const reservations =
+                getReservations();
+
+
+            const reservation =
+                reservations.find(
+                    reservation =>
+                        reservation.id ===
+                        reservationId
+                );
+
+
+            if (!reservation) {
+                return;
+            }
+
+
+            selectedReservationId =
+                reservation.id;
+
+
+            document.getElementById(
+                "modal-reservation-id"
+            ).textContent =
+                reservation.id ||
+                "Reservation";
+
+
+            document.getElementById(
+                "modal-reservation-name"
+            ).textContent =
+                reservation.customerName ||
+                "Guest";
+
+
+            document.getElementById(
+                "modal-reservation-phone"
+            ).textContent =
+                reservation.customerPhone ||
+                "No phone";
+
+
+            document.getElementById(
+                "modal-reservation-guests"
+            ).textContent =
+                reservation.guests ||
+                "0";
+
+
+            document.getElementById(
+                "modal-reservation-date"
+            ).textContent =
+                formatBookingDate(
+                    reservation.date
+                );
+
+
+            document.getElementById(
+                "modal-reservation-time"
+            ).textContent =
+                reservation.time ||
+                "No time";
+
+
+            document.getElementById(
+                "modal-reservation-seating"
+            ).textContent =
+                reservation.seating ||
+                "No preference";
+
+
+            document.getElementById(
+                "modal-reservation-occasion"
+            ).textContent =
+                reservation.occasion ||
+                "General";
+
+
+            document.getElementById(
+                "modal-reservation-notes"
+            ).textContent =
+                reservation.specialRequests ||
+                "No special requests.";
+
+
+            document.getElementById(
+                "modal-reservation-created"
+            ).textContent =
+                formatCreatedDate(
+                    reservation.createdAt
+                );
+
+
+            statusSelect.value =
+                reservation.status ||
+                "Pending";
+
+
+            modal.classList.add(
+                "show"
+            );
+
+        }
+
+
+
+        /* =========================
+           CLOSE MODAL
+        ========================= */
+
+        function closeReservationModal() {
+
+            modal.classList.remove(
+                "show"
+            );
+
+
+            selectedReservationId =
+                null;
+
+        }
+
+
+        closeModalButton.addEventListener(
+            "click",
+            closeReservationModal
+        );
+
+
+        modal.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target === modal
+                ) {
+
+                    closeReservationModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           SAVE STATUS
+        ========================= */
+
+        saveStatusButton.addEventListener(
+            "click",
+            () => {
+
+
+                if (!selectedReservationId) {
+                    return;
+                }
+
+
+                const reservations =
+                    getReservations();
+
+
+                const reservation =
+                    reservations.find(
+                        reservation =>
+                            reservation.id ===
+                            selectedReservationId
+                    );
+
+
+                if (!reservation) {
+                    return;
+                }
+
+
+                reservation.status =
+                    statusSelect.value;
+
+
+                saveReservations(
+                    reservations
+                );
+
+
+                updateReservationStats();
+
+                renderReservations();
+
+                closeReservationModal();
+
+            }
+        );
+
+
+
+        /* =========================
+           FILTER EVENTS
+        ========================= */
+
+        searchInput.addEventListener(
+            "input",
+            renderReservations
+        );
+
+
+        statusFilter.addEventListener(
+            "change",
+            renderReservations
+        );
+
+
+        dateFilter.addEventListener(
+            "change",
+            renderReservations
+        );
+
+
+
+        /* =========================
+           MOBILE SIDEBAR
+        ========================= */
+
+        const sidebar =
+            document.getElementById(
+                "admin-sidebar"
+            );
+
+
+        const menuButton =
+            document.getElementById(
+                "admin-menu-button"
+            );
+
+
+        const sidebarClose =
+            document.getElementById(
+                "admin-sidebar-close"
+            );
+
+
+        menuButton.addEventListener(
+            "click",
+            () => {
+
+                sidebar.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+        sidebarClose.addEventListener(
+            "click",
+            () => {
+
+                sidebar.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* =========================
+           INITIALIZE
+        ========================= */
+
+        updateReservationStats();
+
+        renderReservations();
+
+
+    </script>
+
+
+</body>
+
+</html>
