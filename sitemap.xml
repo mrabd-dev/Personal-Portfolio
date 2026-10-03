@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://mrabd.xyz/</loc>
+    </url>
+
+    <url>
+        <loc>https://mrabd.xyz/About.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mrabd.xyz/Skills.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mrabd.xyz/Projects.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mrabd.xyz/Services.html</loc>
+    </url>
+
+    <url>
+        <loc>https://mrabd.xyz/Contact.html</loc>
+    </url>
+
+</urlset>
