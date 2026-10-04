@@ -2961,6 +2961,10 @@ body:has(.services-page)
     -webkit-text-fill-color: transparent;
 }
 
+.contact-icon .whatsapp {
+    color: #25d366;
+}
+
 .location-link {
     color: #d5e2f3;
     text-decoration: none;
@@ -2982,7 +2986,6 @@ body:has(.services-page)
 .contact-card-content{
     flex: 1;
 }
-
 
 .contact-card-heading{
     margin: 0 0 8px;
@@ -3034,6 +3037,8 @@ body:has(.services-page)
 
 .contact-form-box{
     min-height: 440px;
+
+    margin-top: 30px;
 
     padding: 31px 39px 36px;
 

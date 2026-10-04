@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuIcon.setAttribute("aria-expanded", "true");
     }
-
+    textContent = "✓ Message sent successfully! I'll get back to you soon.";
 
     // ===============================
     // CLOSE MOBILE MENU
