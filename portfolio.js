@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuIcon.setAttribute("aria-expanded", "true");
     }
-    textContent = "✓ Message sent successfully! I'll get back to you soon.";
+    
 
     // ===============================
     // CLOSE MOBILE MENU
@@ -168,81 +168,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // ========================================
-// SMOOTH PAGE TRANSITION
+// CONTACT FORM
 // ========================================
 
-const pageLinks = document.querySelectorAll(
-    '.links a, .hirebtn, .hero-btn1, .hero-btn2, .project-link'
-);
+const form = document.getElementById("contactform");
+const statusMessage = document.getElementById("formStatus");
 
-pageLinks.forEach(function(link){
+const submitBtn = form
+    ? form.querySelector('button[type="submit"]')
+    : null;
 
-    link.addEventListener("click", function(event){
 
-        const url = link.getAttribute("href");
+if (form && statusMessage && submitBtn) {
 
-        // Ignore empty links
-        if (!url || url === "#") {
-            return;
-        }
-
-        // Ignore email links
-        if (url.startsWith("mailto:")) {
-            return;
-        }
-
-        // Ignore external links
-        if (
-            link.target === "_blank" ||
-            url.startsWith("http")
-        ){
-            return;
-        }
+    form.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
-        document.body.classList.add("page-leaving");
+        submitBtn.disabled = true;
 
-        setTimeout(function(){
+        submitBtn.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 
-            window.location.href = url;
+        const formData = new FormData(form);
 
-        }, 250);
+        try {
+
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                statusMessage.textContent =
+                    "✓ Message sent successfully! I'll get back to you soon.";
+
+                statusMessage.style.display = "block";
+                statusMessage.style.color = "#25d366";
+
+                form.reset();
+
+            } else {
+
+                throw new Error("Submission failed");
+
+            }
+
+        } catch (error) {
+
+            statusMessage.textContent =
+                "Something went wrong. Please try again.";
+
+            statusMessage.style.display = "block";
+            statusMessage.style.color = "#ff6b6b";
+
+        } finally {
+
+            submitBtn.disabled = false;
+
+            submitBtn.innerHTML =
+                '<i class="fa-solid fa-paper-plane"></i> Send Message';
+        }
 
     });
 
-});
+}
 
-const form = document.getElementById("contactForm");
-const statusMessage = document.getElementById("formStatus");
 
-form.addEventListener("submit", async (event) => {
-    event.preventDefault();
 
-    const formData = new FormData(form);
 
-    try {
-        const response = await fetch("/", {
-            method: "POST",
-            body: formData
-        });
-
-        if (response.ok) {
-            statusMessage.textContent =
-                "✓ Message sent successfully! I'll get back to you soon.";
-
-            statusMessage.className = "form-status success";
-
-            form.reset();
-        } else {
-            throw new Error("Submission failed");
-        }
-
-    } catch (error) {
-        statusMessage.textContent =
-            "Something went wrong. Please try again.";
-
-        statusMessage.style.display = "block";
-        statusMessage.style.color = "#ff6b6b";
-    }
-});
