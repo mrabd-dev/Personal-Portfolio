@@ -680,7 +680,10 @@ article h3 span{
 
 .social-links a:hover{
     border-color: #3fc1ff;
+    transform: translatey(-5px);
 }
+
+
 
 
 /* ==========================================================
@@ -777,6 +780,9 @@ body:not(.home-page) {
 
     background: rgba(18, 107, 216, 0.12);
     border: 1px solid rgba(56, 189, 248, 0.55);
+
+    white-space: nowrap;
+    flex-shrink: 0;
 
     color: #38bdf8;
 
