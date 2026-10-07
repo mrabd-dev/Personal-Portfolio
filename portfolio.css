@@ -761,36 +761,38 @@ body:not(.home-page) {
 }
 
 
-/* ABOUT ME SMALL PILL */
-
-.remaining-page .abt-msg1{
-    display: flex;
+/* ABOUT ME BADGE */
+.remaining-page .abt-msg1 {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    width: 103px;
-    height: 29px;
+    width: auto;
+    height: 32px;
+    padding: 0 16px;
 
-    margin-bottom: 11px;
+    margin-bottom: 24px;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #126bd8,
-            #087dff
-        );
+    background: rgba(18, 107, 216, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.55);
 
-    color: #ffffff;
+    color: #38bdf8;
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
+    letter-spacing: 0.5px;
 
     box-shadow:
-        0 0 15px rgba(0, 114, 255, 0.35);
-}
+        0 0 12px rgba(56, 189, 248, 0.10),
+        inset 0 0 10px rgba(56, 189, 248, 0.04);
 
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
 
 /* HI I'M */
 
