@@ -103,33 +103,42 @@ article,
 }
 
 header {
+    width: 100%;
+    padding-top: 8px;
+
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 9999;
 
-    background: rgba(3, 10, 25, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: transparent;
 
-    border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
+header::before,
+header::after {
+   border: none !important;
+   outline: none !important;
+   box-shadow: none !important;
+   
+}
 
 
 /* =====================================================
    NAVBAR
    ===================================================== */
 
-header{
-    width: 100%;
-    padding-top: 8px;
-}
 
 
-.Navbar{
+
+.Navbar {
     width: calc(100% - 52px);
     height: 84px;
-
     margin: 0 auto;
 
     display: flex;
@@ -143,10 +152,12 @@ header{
 
     border: 2px solid rgba(76, 99, 196, 0.55);
 
-    box-shadow:
-        0 0 18px rgba(30, 77, 185, 0.08);
-}
+    box-shadow: 0 0 18px rgba(30, 77, 185, 0.08);
 
+    /* Blur only inside navbar */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
 
 /* =========================
    LOGO
@@ -3656,19 +3667,15 @@ body:has(.contact-page)
     }
 
     header {
-        position: sticky;
-        top: 0;
+        position: sticky !important;
+        top: 0 !important;
         z-index: 9999;
 
-        background: rgba(3, 10, 25, 0.92);
-
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-
-        border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+        border: none !important;
+        outline: none !important;
     }
+
+
 
 
 
@@ -5682,7 +5689,7 @@ header .links a:hover {
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 90px;
 }
 
 body.home-page {
@@ -5711,6 +5718,7 @@ main {
 #contact {
     scroll-margin-top: 100px;
 }
+
 
 footer {
     position: relative;
@@ -5960,9 +5968,13 @@ html {
     font-size: 13px;
 }
 
+.footer-bottom p .mr {
+     color: #b8c0cc;
+}
 
-.footer-bottom p span {
-    color: #b8c0cc;
+.footer-bottom p .highlight {
+   
+    color: #38bdf8;
 
     font-weight: 600;
 }
@@ -6088,8 +6100,8 @@ html {
 .floating-whatsapp {
     position: fixed;
 
-    right: 35px;
-    bottom: 60px;
+    right: 34px;
+    bottom: 59px;
 
     width: 58px;
     height: 58px;
@@ -6139,8 +6151,8 @@ html {
         width: 52px;
         height: 52px;
 
-        right: 20px;
-        bottom: 60px;
+        right: 21px;
+        bottom: 61px;
 
         font-size: 26px;
     }
@@ -6249,3 +6261,51 @@ footer {
 
 
 
+@media (max-width: 768px) {
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+    }
+
+    /* Keep sticky header, reduce expensive rendering */
+    header {
+        position: sticky !important;
+        top: 0;
+        z-index: 9999;
+        background: transparent;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .Navbar {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Avoid expensive section animations while scrolling */
+    main > section {
+        transform: none;
+        will-change: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .explore-btn {
+        display: flex;
+        width: fit-content;
+
+        margin: 24px auto 0;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 11px 18px;
+        gap: 8px;
+
+        font-size: 13px;
+        text-align: center;
+    }
+
+}
