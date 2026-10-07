@@ -820,7 +820,7 @@ body:not(.home-page) {
 
     font-weight: 800;
 
-    color: #1398ff;
+    color: #38b9f7;
 
     letter-spacing: -1px;
 }
@@ -5963,6 +5963,7 @@ html {
 
 .footer-bottom p .mr {
      color: #b8c0cc;
+     font-weight: 500;
 }
 
 .footer-bottom p .highlight {
@@ -6191,6 +6192,17 @@ footer {
     color: #9fb0c7;
 
     font-size: 14px;
+}
+
+.footer-content p .mr {
+    color: #cbd5e1;
+
+    font-weight: 500;
+}
+.footer-content p .abd {
+    color: #38bdf8;
+
+    font-weight: 600;
 }
 
 
