@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Privacy Policy for MrAbd developer portfolio."
+    >
+
+    <title>Privacy Policy | MrAbd</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Your favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+
+    <style>
+
+        /* ==============================
+           BASIC RESET
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #d8e0ee;
+
+            background:
+                radial-gradient(
+                    circle at 20% 15%,
+                    rgba(18, 107, 216, 0.13),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(56, 189, 248, 0.07),
+                    transparent 35%
+                ),
+                #020817;
+
+            line-height: 1.7;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        .privacy-header {
+            width: 100%;
+            padding: 14px 5%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(2, 8, 23, 0.92);
+
+            border-bottom:
+                1px solid rgba(56, 189, 248, 0.12);
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            color: #ffffff;
+
+            font-size: 30px;
+            font-weight: 800;
+
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 9px 17px;
+
+            color: #dce8f7;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            border:
+                1px solid rgba(56, 189, 248, 0.35);
+
+            border-radius: 10px;
+
+            background:
+                rgba(56, 189, 248, 0.05);
+
+            transition:
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .back-home:hover {
+            color: #38bdf8;
+
+            border-color: #38bdf8;
+
+            background:
+                rgba(56, 189, 248, 0.10);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
+
+        .privacy-container {
+            width: min(900px, 90%);
+
+            margin: 0 auto;
+
+            padding: 85px 0 90px;
+        }
+
+
+        /* ==============================
+           PAGE HEADING
+        ============================== */
+
+        .privacy-heading {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 17px;
+
+            padding: 6px 15px;
+
+            color: #38bdf8;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 0.4px;
+
+            border:
+                1px solid rgba(56, 189, 248, 0.45);
+
+            border-radius: 20px;
+
+            background:
+                rgba(56, 189, 248, 0.07);
+        }
+
+        .privacy-heading h1 {
+            color: #ffffff;
+
+            font-size: clamp(38px, 6vw, 58px);
+
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+        .privacy-heading h1 span {
+            color: #38bdf8;
+        }
+
+        .privacy-heading > p {
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            color: #aebbd0;
+
+            font-size: 16px;
+        }
+
+
+        /* ==============================
+           POLICY CARD
+        ============================== */
+
+        .policy-card {
+            padding: 38px;
+
+            border:
+                1px solid rgba(56, 189, 248, 0.17);
+
+            border-radius: 20px;
+
+            background:
+                rgba(5, 16, 38, 0.72);
+
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* ==============================
+           POLICY SECTIONS
+        ============================== */
+
+        .policy-section {
+            padding: 29px 0;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .policy-section:first-child {
+            padding-top: 0;
+        }
+
+        .policy-section:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .policy-section h2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 13px;
+
+            color: #ffffff;
+
+            font-size: 21px;
+        }
+
+        .policy-section h2 i {
+            width: 38px;
+            height: 38px;
+
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-shrink: 0;
+
+            color: #38bdf8;
+
+            font-size: 15px;
+
+            border:
+                1px solid rgba(56, 189, 248, 0.30);
+
+            border-radius: 10px;
+
+            background:
+                rgba(56, 189, 248, 0.07);
+        }
+
+        .policy-section p {
+            color: #aebbd0;
+
+            font-size: 15px;
+
+            margin-bottom: 10px;
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section ul {
+            padding-left: 22px;
+            margin-top: 10px;
+
+            color: #aebbd0;
+        }
+
+        .policy-section li {
+            margin-bottom: 7px;
+        }
+
+
+        /* LINKS */
+
+        .policy-section a {
+            color: #38bdf8;
+
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+        }
+
+        .policy-section a:hover {
+            color: #ffffff;
+        }
+
+
+        /* ==============================
+           LAST UPDATED
+        ============================== */
+
+        .last-updated {
+            margin-top: 25px;
+
+            text-align: center;
+
+            color: #78869d;
+
+            font-size: 13px;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        .privacy-footer {
+            padding: 25px 5%;
+
+            text-align: center;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.06);
+
+            background: #030303;
+
+            color: #7f899b;
+
+            font-size: 14px;
+        }
+
+        .privacy-footer .mr {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .privacy-footer .abd {
+            color: #38bdf8;
+            font-weight: 700;
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 768px) {
+
+            .privacy-header {
+                padding: 12px 18px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .back-home {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .privacy-container {
+                width: 90%;
+
+                padding:
+                    55px 0
+                    65px;
+            }
+
+            .privacy-heading {
+                margin-bottom: 35px;
+            }
+
+            .privacy-heading > p {
+                font-size: 14px;
+            }
+
+            .policy-card {
+                padding: 25px 20px;
+
+                border-radius: 16px;
+            }
+
+            .policy-section {
+                padding: 24px 0;
+            }
+
+            .policy-section h2 {
+                align-items: flex-start;
+
+                font-size: 18px;
+            }
+
+            .policy-section p,
+            .policy-section li {
+                font-size: 14px;
+            }
+        }
+
+
+        /* ==============================
+           SMALL MOBILE
+        ============================== */
+
+        @media (max-width: 430px) {
+
+            .back-home span {
+                display: none;
+            }
+
+            .back-home {
+                width: 39px;
+                height: 39px;
+
+                padding: 0;
+
+                justify-content: center;
+            }
+
+            .privacy-container {
+                width: 92%;
+            }
+
+            .policy-card {
+                padding: 22px 17px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         HEADER
+    ============================== -->
+
+    <header class="privacy-header">
+
+        <a href="index.html" class="logo">
+            Mr<span>Abd</span>
+        </a>
+
+        <a href="index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span>Back to Portfolio</span>
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ==============================
+         PRIVACY POLICY
+    ============================== -->
+
+    <main class="privacy-container">
+
+
+        <div class="privacy-heading">
+
+            <div class="privacy-badge">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Privacy & Security
+
+            </div>
+
+
+            <h1>
+                Privacy <span>Policy</span>
+            </h1>
+
+
+            <p>
+                Your privacy matters. This page explains what
+                information may be provided through this portfolio
+                and how it is handled.
+            </p>
+
+        </div>
+
+
+
+        <div class="policy-card">
+
+
+            <!-- INFORMATION -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    Information You Provide
+
+                </h2>
+
+                <p>
+                    When you contact me through the contact form on
+                    this portfolio, you may provide information such
+                    as your name, email address and message.
+                </p>
+
+                <p>
+                    Please avoid submitting sensitive personal
+                    information through the contact form.
+                </p>
+
+            </section>
+
+
+
+            <!-- HOW INFORMATION IS USED -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    How Your Information Is Used
+
+                </h2>
+
+                <p>
+                    Information submitted through the contact form is
+                    used primarily to read and respond to your
+                    inquiry, discuss potential projects or
+                    opportunities, and communicate with you when
+                    necessary.
+                </p>
+
+                <p>
+                    I do not sell personal information submitted
+                    through this portfolio.
+                </p>
+
+            </section>
+
+
+
+            <!-- FORMSPREE -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Contact Form
+
+                </h2>
+
+                <p>
+                    This portfolio uses Formspree to process contact
+                    form submissions. Information you submit through
+                    the form is therefore transmitted to and
+                    processed by Formspree in order to deliver your
+                    message.
+                </p>
+
+                <p>
+                    Formspree operates under its own privacy
+                    practices and policies.
+                </p>
+
+            </section>
+
+
+
+            <!-- EXTERNAL SERVICES -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    External Links & Services
+
+                </h2>
+
+                <p>
+                    This website may contain links to external
+                    platforms such as GitHub, LinkedIn, Instagram
+                    and WhatsApp.
+                </p>
+
+                <p>
+                    When you follow an external link, you leave this
+                    portfolio. Those websites and services have
+                    their own privacy policies and data practices,
+                    which are outside my control.
+                </p>
+
+            </section>
+
+
+
+            <!-- COOKIES -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-cookie-bite"></i>
+
+                    Cookies & Tracking
+
+                </h2>
+
+                <p>
+                    This portfolio does not intentionally use its
+                    own advertising cookies or tracking technologies
+                    to build advertising profiles of visitors.
+                </p>
+
+                <p>
+                    However, third-party services or external
+                    websites you choose to visit may use their own
+                    cookies or similar technologies according to
+                    their policies.
+                </p>
+
+            </section>
+
+
+
+            <!-- SECURITY -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Data Security
+
+                </h2>
+
+                <p>
+                    Reasonable care is taken when handling
+                    information received through this portfolio.
+                    However, no method of transmitting information
+                    over the internet can be guaranteed to be
+                    completely secure.
+                </p>
+
+            </section>
+
+
+
+            <!-- POLICY CHANGES -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Changes to This Policy
+
+                </h2>
+
+                <p>
+                    This Privacy Policy may be updated when the
+                    website, contact methods or third-party services
+                    change. The latest version will be published on
+                    this page.
+                </p>
+
+            </section>
+
+
+
+            <!-- CONTACT -->
+
+            <section class="policy-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Contact
+
+                </h2>
+
+                <p>
+                    If you have a question about this Privacy Policy,
+                    you can contact me through the contact section
+                    of my portfolio.
+                </p>
+
+                <p>
+                    <a href="index.html#contact">
+                        Go to Contact Section
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </p>
+
+            </section>
+
+
+        </div>
+
+
+        <p class="last-updated">
+            Last updated: October 2026
+        </p>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer class="privacy-footer">
+
+        <p>
+            &copy; 2026
+            <span class="mr">Mr</span><span class="abd">Abd</span>.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

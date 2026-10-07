@@ -5979,6 +5979,16 @@ html {
     font-weight: 600;
 }
 
+.footer-bottom .privacy {
+    color: #9ca3af;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+}
+
 
 /* BACK TO TOP */
 
