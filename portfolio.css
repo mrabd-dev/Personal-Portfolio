@@ -657,7 +657,7 @@ article h3 span{
     transition: 0.25s ease;
 }
 
-.hero-btn1 i:hover {
+.hero-btn1:hover i {
 
     transform: rotate(360deg);
 }
@@ -6088,8 +6088,8 @@ html {
 .floating-whatsapp {
     position: fixed;
 
-    right: 28px;
-    bottom: 50px;
+    right: 35px;
+    bottom: 60px;
 
     width: 58px;
     height: 58px;
@@ -6139,8 +6139,8 @@ html {
         width: 52px;
         height: 52px;
 
-        right: 17px;
-        bottom: 17px;
+        right: 20px;
+        bottom: 60px;
 
         font-size: 26px;
     }
