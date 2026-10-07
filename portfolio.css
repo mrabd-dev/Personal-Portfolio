@@ -3666,15 +3666,6 @@ body:has(.contact-page)
         z-index: 9999;
     }
 
-    header {
-        position: sticky !important;
-        top: 0 !important;
-        z-index: 9999;
-
-        border: none !important;
-        outline: none !important;
-    }
-
 
 
 
@@ -6263,35 +6254,6 @@ footer {
 
 @media (max-width: 768px) {
 
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 90px;
-    }
-
-    /* Keep sticky header, reduce expensive rendering */
-    header {
-        position: sticky !important;
-        top: 0;
-        z-index: 9999;
-        background: transparent;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-    }
-
-    .Navbar {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-    }
-
-    /* Avoid expensive section animations while scrolling */
-    main > section {
-        transform: none;
-        will-change: auto;
-    }
-}
-
-@media (max-width: 768px) {
-
     .explore-btn {
         display: flex;
         width: fit-content;
@@ -6308,4 +6270,42 @@ footer {
         text-align: center;
     }
 
+}
+
+
+/* Outer sticky header must be completely invisible */
+header,
+body.home-page header {
+    border: 0 !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+
+    outline: 0 !important;
+    box-shadow: none !important;
+
+    background: transparent !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Remove any decorative line from header */
+header::before,
+header::after,
+body.home-page header::before,
+body.home-page header::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Border belongs ONLY to the rounded navbar */
+header .Navbar {
+    border: 2px solid rgba(76, 99, 196, 0.55) !important;
+    border-radius: 45px;
+
+    background: rgba(6, 14, 35, 0.92);
+
+    box-shadow: 0 0 18px rgba(30, 77, 185, 0.08);
 }
