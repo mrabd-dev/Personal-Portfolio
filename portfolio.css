@@ -6339,3 +6339,48 @@ header .Navbar {
 
     box-shadow: 0 0 18px rgba(30, 77, 185, 0.08);
 }
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: -10px;
+    margin-left: 122px;
+    margin-bottom: 90px;
+    padding: 13px 26px;
+
+    background: transparent;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: #38bdf8;
+    color: #081529;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
+}
+
+.resume-btn:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .resume-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
